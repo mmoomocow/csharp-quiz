@@ -3,7 +3,8 @@ The quiz app and game that is being used for my internals, AS91883 and AS91884.
 
 
 # Develop a Computer Program using Iterative Processes
-AS91883 AS91884
+[AS91883 - Develop a computer program](https://www.nzqa.govt.nz/nqfdocs/ncea-resource/achievements/2019/as91883.pdf)
+[AS91884 - Use basic iterative processes to develop a digital outcome](https://www.nzqa.govt.nz/nqfdocs/ncea-resource/achievements/2019/as91884.pdf)
 
 ## Purpose of the program
 The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive game (tic tac toe) that requires them to correctly answer questions before they can make a move in the game.

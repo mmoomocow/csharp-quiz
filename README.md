@@ -13,23 +13,40 @@ The purpose of the program is to **train our St John youth team** for regional c
 
 
 ## List the components of your program (A)
-* Asking questions in console
-* Tic-tac-toe in console
-* GUI – tic-tac-toe and questioning
-* Giving the users information about the questions they got wrong at the end of the game
+* Quiz
+    * Question struct
+	* Ask questions
+	* Check user input
+	* track correct/incorrect questions
+* Tic-Tac-Toe
+	* game board
+	* validate moves
+	* place moves
+	* detect winner
+* Integration
+	* Combine together
+	* require correct answer before move
+	* GUI
 ## Planning – show evidence of how you plan to create you program. (A)
-* Asking questions in console
-    * Have an array of questions and an array of answers
-    * Pick an item from the array
-    * Ask the question and use Console.ReadLine to get user’s response
-    * Check the user’s response against the answer array
-* Tic-tac-toe in console
-    * Game board array of characters
-    * User picks a number to place their X or O
-* GUI – tic-tac-toe and questioning
-    * Use windows form, 9 buttons for the grid
-    * 4 buttons for multi-choice questions
-* Giving the users information about the questions they got wrong
+* Quiz
+    * [Question structure](https://www.w3schools.com/cs/cs_constructors.php)
+	* Put questions into arrays
+	* Ask questions using random item and Console.Writeline
+	* Get and validate user input using Console.ReadLine
+	* track correct/incorrect questions
+* Tic-Tac-Toe
+	* Game board saved as char array
+		* '?' for not used
+		* 'X' for player 1
+		* 'O' for player 2
+	* game board using 9 buttons on GUI
+	* validate moves with function that checks array
+	* place moves
+	* detect winner
+* Integration
+	* Combine together
+	* require correct answer before move
+	* GUI
 
 ## Evidence of Trialing your components (A, M, E)
 

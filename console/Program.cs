@@ -4,9 +4,9 @@ namespace console
 {
 	public class MultiChoiceQuestion
 	{
-		string questionText;
-		string[] possibleAnswers; // if multiChoice true
-		int correctIndex; // if multiChoice true
+		public string questionText;
+		public string[] possibleAnswers;
+		public int correctIndex;
 
 		public MultiChoiceQuestion(string text, string[] answers, int correct)
 		{
@@ -17,8 +17,8 @@ namespace console
 	}
 	public class Question
 	{
-		string questionText;
-		string correctIndex; // if multiChoice true
+		public string questionText;
+		public string correctIndex;
 
 		public Question(string text, string correct)
 		{

@@ -2,17 +2,17 @@
 
 namespace console
 {
-	public class Question
+	public struct Question
 	{
 		public string questionText;
 		public string[] possibleAnswers;
 		public int correctIndex;
 
-		public Question(string text, string[] answers, int correct)
+		public Question(string question, string[] answers, int correctAnswer)
 		{
-			questionText = text;
+			questionText = question;
 			possibleAnswers = answers;
-			correctIndex = correct;
+			correctIndex = correctAnswer;
 		}
 	}
 	class Program

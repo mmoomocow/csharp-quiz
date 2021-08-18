@@ -2,27 +2,16 @@
 
 namespace console
 {
-	public class MultiChoiceQuestion
+	public class Question
 	{
 		public string questionText;
 		public string[] possibleAnswers;
 		public int correctIndex;
 
-		public MultiChoiceQuestion(string text, string[] answers, int correct)
+		public Question(string text, string[] answers, int correct)
 		{
 			questionText = text;
 			possibleAnswers = answers;
-			correctIndex = correct;
-		}
-	}
-	public class Question
-	{
-		public string questionText;
-		public string correctIndex;
-
-		public Question(string text, string correct)
-		{
-			questionText = text;
 			correctIndex = correct;
 		}
 	}
@@ -30,7 +19,7 @@ namespace console
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+
 		}
 	}
 }

@@ -51,5 +51,5 @@ The purpose of the program is to **train our St John youth team** for regional c
 ## Evidence of Trialing your components (A, M, E)
 
 ## Evidence of Testing your components/program (A, M, E)
-
+[Tracking of issues is done on the github repo click here](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 ## Evidence of addressing relevant implications (M)

@@ -1,9 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: '[ Untitled Bug ]'
-labels: 'bug'
-assignees: '@mmoomocow'
+title: "[ Untitled Bug ]"
+labels: bug
+assignees: ''
 
 ---
 

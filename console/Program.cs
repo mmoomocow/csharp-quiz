@@ -19,12 +19,22 @@ namespace console
 	{
 		static void Main(string[] args)
 		{
+			Random rnd = new Random();
 			Question[] questions =
 			{
-				new Question("Question 1", (new string[] {"Answer 0", "Answer 1", " Answer 2", "Answer 3"}), 2),
-				new Question("Question 2", (new string[] {"Answer 0", "Answer 1", " Answer 2", "Answer 3"}), 3),
-				new Question("Question 3", (new string[] {"Answer 0", "Answer 1", " Answer 2", "Answer 3"}), 0),
+				new Question("Question 1", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 2),
+				new Question("Question 2", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 3),
+				new Question("Question 3", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 0),
 			};
+			Question randomQuestion = questions[rnd.Next(questions.Length)];
+
+			Console.WriteLine(randomQuestion.questionText);
+			for (int i = 0; i < randomQuestion.possibleAnswers.Length; i++)
+			{
+				Console.WriteLine($"{i + 1}) {randomQuestion.possibleAnswers[i]}");
+			}
+
+			Console.ReadLine();
 		}
 	}
 }

@@ -34,8 +34,11 @@ namespace console
 				Console.WriteLine($"{i + 1}) {randomQuestion.possibleAnswers[i]}");
 			}
 
-			string answerString = Console.ReadLine();
-			int answerInt = Convert.ToInt32(answerString) - 1;
+			int answerInt;
+			while (!Int32.TryParse(Console.ReadLine(), out answerInt))
+			{
+				Console.WriteLine("Thats not a valid answer, please try again!");
+			}
 
 			if (answerInt != randomQuestion.correctIndex)
 			{

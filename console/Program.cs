@@ -34,6 +34,18 @@ namespace console
 				Console.WriteLine($"{i + 1}) {randomQuestion.possibleAnswers[i]}");
 			}
 
+			string answerString = Console.ReadLine();
+			int answerInt = Convert.ToInt32(answerString) - 1;
+
+			if (answerInt != randomQuestion.correctIndex)
+			{
+				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}");
+			}
+			else
+			{
+				Console.WriteLine("Thats correct!!");
+			}
+
 			Console.ReadLine();
 		}
 	}

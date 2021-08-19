@@ -7,12 +7,14 @@ namespace console
 		public string questionText;
 		public string[] possibleAnswers;
 		public int correctIndex;
+		public string explanation;
 
-		public Question(string question, string[] answers, int correctAnswer)
+		public Question(string question, string[] answers, int correctAnswer, string answerExplanation)
 		{
 			questionText = question;
 			possibleAnswers = answers;
 			correctIndex = correctAnswer;
+			explanation = answerExplanation;
 		}
 	}
 	class Program
@@ -22,9 +24,9 @@ namespace console
 			Random rnd = new Random();
 			Question[] questions =
 			{
-				new Question("Question 1", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 2),
-				new Question("Question 2", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 3),
-				new Question("Question 3", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 0),
+				new Question("Question 1", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 2, "Some kind of explanation for why number 3 is correct..."),
+				new Question("Question 2", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 3, "Some kind of explanation for why number 4 is correct..."),
+				new Question("Question 3", (new string[] {"Answer 0", "Answer 1", "Answer 2", "Answer 3"}), 0, "Some kind of explanation for why number 1 is correct..."),
 			};
 			Question randomQuestion = questions[rnd.Next(questions.Length)];
 
@@ -42,7 +44,7 @@ namespace console
 
 			if (answerInt != randomQuestion.correctIndex)
 			{
-				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}");
+				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}\n{randomQuestion.explanation}");
 			}
 			else
 			{

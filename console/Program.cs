@@ -7,12 +7,14 @@ namespace console
 		public string questionText;
 		public string[] possibleAnswers;
 		public int correctIndex;
+		public string explanation;
 
-		public Question(string question, string[] answers, int correctAnswer)
+		public Question(string question, string[] answers, int correctAnswer, string answerExplanation)
 		{
 			questionText = question;
 			possibleAnswers = answers;
 			correctIndex = correctAnswer;
+			explanation = answerExplanation;
 		}
 	}
 	class Program

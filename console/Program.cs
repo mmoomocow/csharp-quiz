@@ -2,13 +2,12 @@
 
 namespace console
 {
-	public struct Question
+	public class Question
 	{
 		public string questionText;
 		public string[] possibleAnswers;
 		public int correctIndex;
 		public string explanation;
-
 		public Question(string question, string[] answers, int correctAnswer, string answerExplanation)
 		{
 			questionText = question;

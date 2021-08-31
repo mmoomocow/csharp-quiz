@@ -6,8 +6,15 @@ on:
   pull_request:
     branches: [ main ]
 
+defaults:
+  run:
+    working-directory: console
+
 jobs:
-  build:
+  buildConsole:
+    defaults:
+      run:
+        working-directory: console
 
     runs-on: ubuntu-latest
 

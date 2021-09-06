@@ -8,7 +8,7 @@ on:
 
 jobs:
   buildConsole:
-    name: 'Dotnet v${{ matrix.dotnet }} on ${{ matrix.os }} for ${{ matrix.dir }} directory'
+    name: "Dotnet v${{ matrix.dotnet }} on ${{ matrix.os }} for ${{ matrix.dir }} directory"
     strategy:
         matrix:
           dotnet: [ '3.1.x', '5.0.x' ]

@@ -39,7 +39,7 @@ jobs:
         tag=$(git describe --tags --abbrev=0)
         release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}"
         # Build everything
-        dotnet publish ${{ matrix.dir }}.csproj --framework net5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+        dotnet publish ${{ matrix.dir }}.csproj --framework net5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name" /p:PublishSingleFile=true
         # Pack files
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           # Pack to zip for Windows
@@ -52,6 +52,8 @@ jobs:
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:
-        files: "App*"
+        files: |
+          *.exe
+          *.dll
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -37,12 +37,14 @@ jobs:
       shell: bash
       run: |
         tag=$(git describe --tags --abbrev=0)
-        release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}"
+        release_name="App-$tag-${{ matrix.os }}-net5.0"
         # Build everything
         dotnet publish ${{ matrix.dir }}.csproj --framework net5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
     - name: Pack Files
       shell: bash
       run: |
+        tag=$(git describe --tags --abbrev=0)
+        release_name="App-$tag-${{ matrix.os }}-net5.0"
         # Pack files
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           # Pack to zip for Windows

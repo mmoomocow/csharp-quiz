@@ -9,9 +9,17 @@ jobs:
     name: Release of the ${{ matrix.dir }} directory for dotnet v${{ matrix.dotnet }} on ${{ matrix.os }}
     strategy:
       matrix:
-          dotnet: [ '5.0.x' ]
-          os: [ ubuntu-latest, windows-latest ]
-          dir: [ console ]
+        dotnet: [ '5.0.x' ]
+        kind: ['linux', 'windows']
+        include:
+          - kind: linux
+            os: ubuntu-latest
+            target: linux-x64
+          - kind: windows
+            os: windows-latest
+            target: win-x64
+
+        dir: [ console ]
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -32,7 +40,7 @@ jobs:
         tag=$(git describe --tags --abbrev=0)
         release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}"
         # Build everything
-        dotnet publish ${{ matrix.dir }}.csproj --framework netcoreapp${{matrix.dotnet}} --runtime "${{ matrix.os }}" -c Release -o "$release_name"
+        dotnet publish ${{ matrix.dir }}.csproj --framework netcoreapp${{matrix.dotnet}} --runtime "${{ matrix.target }}" -c Release -o "$release_name"
         # Pack files
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           # Pack to zip for Windows

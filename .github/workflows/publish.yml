@@ -52,7 +52,6 @@ jobs:
         else
         tar czvf "${release_name}.tar.gz" "$release_name"
         fi
-        say "Done packing!"
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:

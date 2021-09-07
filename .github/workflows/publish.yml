@@ -9,7 +9,6 @@ jobs:
     name: Dotnet v5.0.x on ${{ matrix.os }}
     strategy:
       matrix:
-      matrix:
         kind: ['linux', 'windows', 'macOS']
         include:
           - kind: linux

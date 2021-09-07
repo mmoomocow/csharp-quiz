@@ -40,6 +40,9 @@ jobs:
         release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}"
         # Build everything
         dotnet publish ${{ matrix.dir }}.csproj --framework net5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+    - name: Pack Files
+      shell: bash
+      run: |
         # Pack files
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           # Pack to zip for Windows
@@ -47,7 +50,7 @@ jobs:
         else
         tar czvf "${release_name}.tar.gz" "$release_name"
         fi
-        # Delete output directory
+        say "Done packing!"
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:

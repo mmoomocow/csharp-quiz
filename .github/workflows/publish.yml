@@ -31,7 +31,7 @@ jobs:
       run: |
         cd ${{ matrix.dir }}
         tag=$(git describe --tags --abbrev=0)
-        release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ os.dotnet }}--app-${{ matrix.dir }}"
+        release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}--app-${{ matrix.dir }}"
         # Build everything
         dotnet publish src/App/App.csproj --framework netcoreapp3.1 --runtime "${{ matrix.os }}" -c Release -o "$release_name"
         # Pack files

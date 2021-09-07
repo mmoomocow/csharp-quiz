@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    name: Release of the ${{ matrix.dir }} directory for dotnet v${{ matrix.dotnet }} on ${{ matrix.os }}
+    name: Release of the ${{ matrix.dir }} directory for dotnet v5.0.x on ${{ matrix.os }}
     strategy:
       matrix:
         kind: ['linux', 'windows']
@@ -17,12 +17,6 @@ jobs:
           - kind: windows
             os: windows-latest
             target: win-x64
-
-          - kind: ['dotnet5']
-          include:
-            - kind: dotnet5
-              dotnet: 5.0.x
-              targetFramework: '5.0'
 
         dir: [ console ]
     runs-on: ${{ matrix.os }}
@@ -37,7 +31,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ matrix.dotnet }}
+        dotnet-version: 5.0.x
 
     - name: Build
       shell: bash
@@ -45,7 +39,7 @@ jobs:
         tag=$(git describe --tags --abbrev=0)
         release_name="App-$tag--${{ matrix.os }}--dotnet-V${{ matrix.dotnet }}"
         # Build everything
-        dotnet publish ${{ matrix.dir }}.csproj --framework netcoreapp${{matrix.targetFramework}} --runtime "${{ matrix.target }}" -c Release -o "$release_name"
+        dotnet publish ${{ matrix.dir }}.csproj --framework netcoreapp5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
         # Pack files
         if [ "${{ matrix.os }}" == "windows-latest" ]; then
           # Pack to zip for Windows

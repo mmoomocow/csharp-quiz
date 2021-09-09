@@ -9,6 +9,9 @@ The quiz app and game that is being used for my internals, AS91883 and AS91884.
 ## Purpose of the program
 The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive game (tic tac toe) that requires them to correctly answer questions before they can make a move in the game.
 
+## Target audience
+My target audience is my St John youth team, a group of 13 - 17 year olds who have an understanding of basic first aid, and are learning more complex first aid.
+
 ## Describing Relevant Implications (A)
 
 ### Social

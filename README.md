@@ -15,7 +15,18 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 ## Describing Relevant Implications (A)
 
 ### Social
+**The social implications of my program include:**
+* Ensuring the final quiz is suitable to the target audience
+* Ensuring the final quiz is what the client wants
 
+**I will do this by:**
+* Using language that can be understood by my target audience
+* Making the questions are relevant to our training
+* Fulfilling the purpose of the program
+
+**To ensure I am doing this I will**
+* Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
+* Taking to the other members of my team to ensure the understand the questions
 
 ### Usability
 
@@ -67,3 +78,4 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 ## Evidence of Testing your components/program (A, M, E)
 [Tracking of issues is done on the github repo click here](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 ## Evidence of addressing relevant implications (M)
+

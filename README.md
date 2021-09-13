@@ -66,7 +66,22 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Show the target audience the program and get their feedback on it's relevancy
 
 ### Sustainability and future proofing 
+**The sustainability and future proofing implications of my program include:**
+* Considering the file size of my program
+* Considering the processing time and resource usage of the program
+* Use up to date c#
+* Code Comments
+* Using common c# conventions
 
+**I will do this by:**
+* Reducing excess file usage
+* Minimizing resources required for running the program
+* Checking my code against the current microsoft c# documentation
+* Adding code comments
+* Using common and up-to-date c# conventions
+
+**To ensure I am doing this I will**
+* 
 
 ## List the components of your program (A)
 * Quiz

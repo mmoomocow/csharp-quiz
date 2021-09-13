@@ -46,7 +46,23 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Checking my program against the usability heuristics
 
 ### Functionality
+**The functionality implications of my program include:**
+* Making sure the program fulfills the purpose of the program
+* Making sure all inputs work as expected
+* Testing input fields to ensure they are client-proof
+* Ensuring the program is what the client/target audience want
 
+**I will do this by:**
+* Fulfilling the purpose of the program
+* Checking the functionality of inputs
+* Implementing "sanity checks" in all inputs to ensure errors cannot be caused
+* Making the program relevant to the purpose and target audience
+
+**To ensure I am doing this I will**
+* Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
+* Repeated and frequent testing of new and existing features to ensure their functionality
+* Testing the inputs with unusual values to ensure the sanity checks are working
+* Show the target audience the program and get their feedback on it's relevancy
 
 ### Sustainability and future proofing 
 

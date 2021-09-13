@@ -61,6 +61,7 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 **To ensure I am doing this I will**
 * Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
 * Repeated and frequent testing of new and existing features to ensure their functionality
+* Testing input fields to ensure they are client-proof
 * Testing the inputs with unusual values to ensure the sanity checks are working
 * Show the target audience the program and get their feedback on it's relevancy
 

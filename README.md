@@ -29,7 +29,21 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Taking to the other members of my team to ensure the understand the questions
 
 ### Usability
+**The usability implications of my program include:**
+* Ensuring the program is intuitive and easy to use
+* Not making it to simple or complex for my target audience
+* Using a readable font in my GUI
+* Following the usability heuristics
 
+**I will do this by:**
+* Designing a simple interface that is easy to use
+* Not making an interface that is very simple/complex
+* Using a readable font
+
+**To ensure I am doing this I will**
+* Test my program with my target audience and collecting feedback
+* Ensuring text can be read
+* Checking my program against the usability heuristics
 
 ### Functionality
 

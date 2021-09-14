@@ -81,7 +81,9 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Using common and up-to-date c# conventions
 
 **To ensure I am doing this I will**
-* 
+* Use efficient code to reduce storage space and resources required
+* Use github CodeQL to check all the code
+* Check that there are code comments to explain the code
 
 ## List the components of your program (A)
 * Quiz

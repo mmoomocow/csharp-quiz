@@ -77,10 +77,15 @@ namespace console
 			};
 
 			Question[] Questions_writtenTest = {
-				new Question("Question 4 A", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 0, "Some kind of explanation for why number 1 is correct..."),
-				new Question("Question 4 B", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 2, "Some kind of explanation for why number 2 is correct..."),
-				new Question("Question 4 C", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 1, "Some kind of explanation for why number 3 is correct..."),
-				new Question("Question 4 D", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 3, "Some kind of explanation for why number 4 is correct..."),
+				new Question("How many Districts are there in the south island?", (new string[] { "7", "9", "10", "11" }), 1, "There are 9 districts, Mid Canterbury, North Canterbury, Christchurch, Costal Otago, Central Otago, Southland, Aoraki, West Coast and Nelson Marlborough."),
+				new Question("How many regions are there in New Zealand", (new string[] { "1", "2", "3", "4" }), 2, "There are 3 regions, Northern, Central and South Island"),
+				new Question("How many areas are there in the Costal Otago district?", (new string[] { "5", "8", "6", "4" }), 1, "There are 5 areas, South, Costal otago, Ara te uru, Taieri, and Otepoti"),
+				new Question("How many badges are there in the Grand Prior curriculum", (new string[] { "15", "23", "27", "31" }), 2, "There are 27 badges you can achieve under the grand prior system. This is because green, blue and gold levels are counted as one badge."),
+				new Question("How many hours of comunity service are required to get a green shield?", (new string[] { "100 hours", "200 hours", "500 hours", "800 hours" }), 1, "200 hours gives you a blue shield."),
+				new Question("Which of these is not a St John program", (new string[] { "Operations", "Therapy Pets", "1737", "FEDs" }), 2, "St John's community programs include Operations, Therapy Pets, FEDs, Medical Alarms, St John in schools and more. 1737 is independent, but a good resource to use"),
+				new Question("Which of these is not one of St John's cardinal values on the Amalfi Cross?", (new string[] { "Compassion", "Prudence", "Temperance", "Fortitude" }), 0, "The 4 cardinal values on the Amalfi Cross are Prudence, Justice, Temperance and Fortitude"),
+				new Question("In what decade was the Order of the Hospital of St John of Jerusalem start?", (new string[] { "1110", "1060", "1150", "1070" }), 3, "The exact date of when the order formed is unknown, however it is believed to be in 1070."),
+				new Question("When was the order become a royal order?", (new string[] { "1888", "1873", "1891", "1915" }), 0, "It was in 1888 when Queen Victoria granted the order of St John royal charter and the royal beasts were added to the Amalfi cross"),
 			};
 
 			// === Component - Deciding question type ===

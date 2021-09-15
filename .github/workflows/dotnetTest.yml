@@ -11,7 +11,7 @@ jobs:
     name: Dotnet v${{ matrix.dotnet }} on ${{ matrix.os }} for ${{ matrix.dir }} directory
     strategy:
         matrix:
-          dotnet: [ '5.0.x' ]
+          dotnet: [ '5.0.x', '3.1.x' ]
           os: [ ubuntu-latest, windows-latest ]
           dir: [ console ]
     defaults:

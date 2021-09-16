@@ -112,13 +112,13 @@ namespace console
 			switch (questionType)
 			{
 				// If the user gives question type 2 as their answer
-				case 1:
+				case 2:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
 					randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
 					break;
 				// If the user gives question type 3 as their answer
-				case 2:
+				case 3:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
 					randomQuestion = Questions_writtenTest[rnd.Next(Questions_writtenTest.Length)];
@@ -159,7 +159,7 @@ namespace console
 			}
 
 			// If the answer is not correct
-			if (answerInt != randomQuestion.correctIndex)
+			if (answerInt != (randomQuestion.correctIndex + 1))
 			{
 				// Tell the user the answer is incorrect, then give the correct answer and an explanation for why the answer is correct
 				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}\n{randomQuestion.explanation}");

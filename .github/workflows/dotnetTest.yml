@@ -8,10 +8,9 @@ on:
 
 jobs:
   buildConsole:
-    name: Dotnet v${{ matrix.dotnet }} on ${{ matrix.os }} for ${{ matrix.dir }} directory
+    name: Dotnet on ${{ matrix.os }} for ${{ matrix.dir }} directory
     strategy:
         matrix:
-          dotnet: [ '5.0.x', '3.1.x' ]
           os: [ ubuntu-latest, windows-latest ]
           dir: [ console ]
     defaults:
@@ -25,7 +24,12 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: ${{ matrix.dotnet }}
+        dotnet-version: 5.0.x
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build

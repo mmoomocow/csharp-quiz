@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    name: Dotnet v5.0.x on ${{ matrix.os }}
+    name: Dotnet on ${{ matrix.os }}
     strategy:
       matrix:
         kind: ['linux', 'windows', 'macOS']
@@ -31,6 +31,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
 
     - name: Build
       shell: bash

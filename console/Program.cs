@@ -58,11 +58,15 @@ namespace console
 			// Each array of questions is a different type
 			// The questions are created from the Question constructor
 			Question[] Questions_triage = {
-				new Question("Question 1 A", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 3, "Some kind of explanation for why number 1 is correct..."),
-				new Question("Question 1 B", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 2, "Some kind of explanation for why number 2 is correct..."),
-				new Question("Question 1 C", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 0, "Some kind of explanation for why number 3 is correct..."),
-				new Question("Question 1 D", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 1, "Some kind of explanation for why number 4 is correct..."),
+				new Question("Status 1 is considered to be:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
+				new Question("A patient with stroke symptoms and < 3 hour onset would be what status?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 1, "Stroke patients with a symptom onset of < 3.5 hours are considered status 2"),
+				new Question("A patient was in a RTC but has no apparent injuries, what status are they?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 3, "If the patient has no injuries they are status 4, MOI should not be considered when determining status codes"),
+				new Question("A patient walks over to you complaining of a toothache, what status are they?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 3, "Toothaches are not medically urgent"),
+				new Question("What operation code is used for 'Urgent but not Immediately Life Threatening'", (new string[] { "Purple", "Orange", "Yellow", "Green" }), 1, "Operation code orange is defined as Urgent but not Immediately Life Threatening"),
+				new Question("What status code is the following patient: 13-year-old female with an open fracture of the wrist", (new string[] { "Status 4", "Status 3", "Status 2", "Status 1" }), 1, "As there is a broken long bone and bleeding they are status 3. It is unlikely to be life threatening.")
+				new Question("Status code 0 is:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 0, "Dead patients are given the status code 0")
 			};
+
 			Question[] Questions_vitalSigns = {
 				new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", " 100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
 				new Question("What's a normal palpated blood pressure?", (new string[] { "120/80", "120/P", "80/P", "130/70" }), 1, "As the blood pressure is palpated, there should be no bottom number, 120/p is normal."),

@@ -159,7 +159,7 @@ namespace console
 			}
 
 			// If the answer is not correct
-			if (answerInt != (randomQuestion.correctIndex - 1))
+			if (answerInt != (randomQuestion.correctIndex + 1))
 			{
 				// Tell the user the answer is incorrect, then give the correct answer and an explanation for why the answer is correct
 				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}\n{randomQuestion.explanation}");

@@ -57,17 +57,11 @@ namespace console
 			// Create questions. 
 			// Each array of questions is a different type
 			// The questions are created from the Question constructor
-			Question[] Questions_firstAid = {
+			Question[] Questions_triage = {
 				new Question("Question 1 A", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 3, "Some kind of explanation for why number 1 is correct..."),
 				new Question("Question 1 B", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 2, "Some kind of explanation for why number 2 is correct..."),
 				new Question("Question 1 C", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 0, "Some kind of explanation for why number 3 is correct..."),
 				new Question("Question 1 D", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 1, "Some kind of explanation for why number 4 is correct..."),
-			};
-			Question[] Questions_caregivers = {
-				new Question("Question 2 A", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 1, "Some kind of explanation for why number 1 is correct..."),
-				new Question("Question 2 B", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 2, "Some kind of explanation for why number 2 is correct..."),
-				new Question("Question 2 C", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 3, "Some kind of explanation for why number 3 is correct..."),
-				new Question("Question 2 D", (new string[] { "Answer 0", "Answer 1", "Answer 2", "Answer 3" }), 2, "Some kind of explanation for why number 4 is correct..."),
 			};
 			Question[] Questions_vitalSigns = {
 				new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", " 100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
@@ -93,7 +87,7 @@ namespace console
 			// Pre-define an int for the type outside of the scope of the while loop
 			int questionType;
 			// Ask the user what question type they want
-			Console.WriteLine("What question type do you want? \n1. First Aid \n2. Caregivers \n3. Vital Signs \n4. Written Test");
+			Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
 			// Get the user's input
 			// Using a while loop and TryParse reduces the amount of code required, and the loop will only run when
 			// TryParse fails
@@ -102,7 +96,7 @@ namespace console
 				// Tell the user that their choice is not valid
 				Console.WriteLine("Thats not a valid choice! please try again");
 				// and ask again
-				Console.WriteLine("What question type do you want? \n1. First Aid \n2. Caregivers \n3. Vital Signs \n4. Written Test");
+				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
 			}
 
 
@@ -117,16 +111,10 @@ namespace console
 				case 2:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
-					randomQuestion = Questions_caregivers[rnd.Next(Questions_caregivers.Length)];
+					randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
 					break;
 				// If the user gives question type 3 as their answer
 				case 3:
-					// Generate a random number, it will be >= 0 and <= the length of the array
-					// Then get the item in that index position of the array
-					randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
-					break;
-				// If the user gives question type 4 as their answer
-				case 4:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
 					randomQuestion = Questions_writtenTest[rnd.Next(Questions_writtenTest.Length)];
@@ -135,7 +123,7 @@ namespace console
 				default:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
-					randomQuestion = Questions_firstAid[rnd.Next(Questions_firstAid.Length)];
+					randomQuestion = Questions_triage[rnd.Next(Questions_triage.Length)];
 					break;
 			}
 

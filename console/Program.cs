@@ -98,21 +98,21 @@ namespace console
 		{
 			if (questionType == 0)
 			{
-				int randomIndex = rand.Next(0, firstAid.Count);
+				int randomIndex = rand.Next(0, firstAid.Count - 1);
 				Question randomQuestion = firstAid[randomIndex];
 				firstAid.RemoveAt(randomIndex);
 				return randomQuestion;
 			}
 			else if (questionType == 1)
 			{
-				int randomIndex = rand.Next(0, vitalSigns.Count);
+				int randomIndex = rand.Next(0, vitalSigns.Count - 1);
 				Question randomQuestion = vitalSigns[randomIndex];
 				vitalSigns.RemoveAt(randomIndex);
 				return randomQuestion;
 			}
 			else
 			{
-				int randomIndex = rand.Next(0, writtenTest.Count);
+				int randomIndex = rand.Next(0, writtenTest.Count - 1);
 				Question randomQuestion = writtenTest[randomIndex];
 				writtenTest.RemoveAt(randomIndex);
 				return randomQuestion;

@@ -85,6 +85,8 @@ namespace console
 			new Question("When was the order become a royal order?", (new string[] { "1888", "1873", "1891", "1915" }), 0, "It was in 1888 when Queen Victoria granted the order of St John royal charter and the royal beasts were added to the Amalfi cross"),
 		};
 
+		private Random rand;
+
 		/// <summary>
 		/// Pick a random question from the chosen list.
 		/// Removes the question from the list to prevent asking the same question multiple times.
@@ -92,7 +94,7 @@ namespace console
 		/// <param name="questionType">The question type of the question: 0 = First Aid  -  1 = Vital Signs  -  2 = Written Test</param>
 		/// <param name="rand">The random object to generate index values from</param>
 		/// <returns></returns>
-		public Question randomQuestion(int questionType, Random rand)
+		public Question randomQuestion(int questionType)
 		{
 			if (questionType == 0)
 			{
@@ -120,7 +122,7 @@ namespace console
 		/// <summary>
 		/// Constructs a default Questions object
 		/// </summary>
-		public Questions() { }
+		public Questions(Random randomNumberGenerator) { rand = randomNumberGenerator; }
 	}
 
 	/// <summary>
@@ -163,34 +165,6 @@ namespace console
 			// set i as 0; While i < numberOfQuestions; Add 1 to i
 			for (int i = 0; i < numberOfQuestions; i++)
 			{
-
-				// === Component - Selecting a random question ===
-				// Define the randomQuestion variable outside of the scope of the switch
-				Question randomQuestion;
-				// Use a switch statement to get the correct question type
-				// A switch statement is used here because it allows simple expantion of the program 
-				// switch (questionType)
-				// {
-				// 	// If the user gives question type 2 as their answer
-				// 	case 2:
-				// 		// Generate a random number, it will be >= 0 and <= the length of the array
-				// 		// Then get the item in that index position of the array
-				// 		randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
-				// 		break;
-				// 	// If the user gives question type 3 as their answer
-				// 	case 3:
-				// 		// Generate a random number, it will be >= 0 and <= the length of the array
-				// 		// Then get the item in that index position of the array
-				// 		randomQuestion = Questions_writtenTest[rnd.Next(Questions_writtenTest.Length)];
-				// 		break;
-				// 	// Having a default case is required, if the switch hasn't triggered yet it will run this
-				// 	default:
-				// 		// Generate a random number, it will be >= 0 and <= the length of the array
-				// 		// Then get the item in that index position of the array
-				// 		randomQuestion = Questions_firstAid[rnd.Next(Questions_firstAid.Length)];
-				// 		break;
-				// }
-
 				// === Component - Asking the user a question ===
 
 				// Write the question text of the randomly selected question

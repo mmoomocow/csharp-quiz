@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace console
 {
@@ -73,6 +73,10 @@ namespace console
 				new Question("What is a normal BGL?", (new string[] { "2 mmol/L", "15 mmol/L", "12 mmol/L", "5 mmol/L" }), 3, "Anything less than or equal to 3 is considered low and requires intervention and anything above 10 is higher than normal."),
 				new Question("What is the lowest GCS score possible?", (new string[] { "0", "1", "2", "3" }), 3, "Each of the 3 areas of the GCS assessment is given a minimum score of 1, so less than 3 is not possible"),
 				new Question("What is a normal resperatory rate?", (new string[] {"10 bpm", "12 bpm", "15 bpm", "21 bpm"}), 1, "The average resp rate is 12 breaths per minute"),
+				new Question("Where do you take the heart rate of a conscious person?", (new string[] { "Wrist", "Neck", "Leg", "Chest" }), 0, "The wrist is the least intrusive place to take a pulse, so for conscious patients we take it there."),
+				new Question("What would a GCS of 15 be in AVPU?", (new string[] { "Alert", "Voice", "Pain", "Unresponsive" }), 0, "15 is the highest GCS score, and higher scores mean the patient is more awake and alert"),
+				new Question("How is response to pain checked?", (new string[] { "By pricking them with a pin", "By tapping their head", "By tapping on their arms", "By knocking on their clavical" }), 3, "The clavical is used because it causes little pain, and is less harmful"),
+				new Question("Which of these is not one of the 3 categories in the GCS scale", (new string[] { "Eye opening", "Pain response", "Motor response", "Verbal response" }), 1, "Pain response is measured as part of eye opening and motor response but is not one of the 3 catagories"),
 			};
 
 			Question[] Questions_writtenTest = {

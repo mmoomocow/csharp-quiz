@@ -97,7 +97,7 @@ namespace console
 			// Pre-define an int for the type outside of the scope of the while loop
 			int questionType;
 			// Ask the user what question type they want
-			Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
+			Console.WriteLine("What question type do you want? \n1. First aid and Triage \n2. Vital Signs \n3. Written Test");
 			// Get the user's input
 			// Using a while loop and TryParse reduces the amount of code required, and the loop will only run when
 			// TryParse fails

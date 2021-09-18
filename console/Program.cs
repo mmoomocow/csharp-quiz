@@ -116,6 +116,11 @@ namespace console
 				return randomQuestion;
 			}
 		}
+
+		/// <summary>
+		/// Constructs a default Questions object
+		/// </summary>
+		public Questions() { }
 	}
 
 	/// <summary>

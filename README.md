@@ -7,7 +7,7 @@ The quiz app and game that is being used for my internals, AS91883 and AS91884.
 [AS91884 - Use basic iterative processes to develop a digital outcome](https://www.nzqa.govt.nz/nqfdocs/ncea-resource/achievements/2019/as91884.pdf)
 
 ## Purpose of the program
-The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive game (tic tac toe) that requires them to correctly answer questions before they can make a move in the game.
+The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive quiz. The compedative aspect of the quiz will incentivise them to do well, and learn more so they can do better
 
 ## Target audience
 My target audience is my St John youth team, a group of 13 - 17 year olds who have an understanding of basic first aid, and are learning more complex first aid.
@@ -86,41 +86,30 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Check that there are code comments to explain the code
 
 ## List the components of your program (A)
-- [ ] Quiz
+- [x] Console Quiz
     - [X] Question struct
 	- [X] Ask questions
 	- [X] Check user input
-	- [ ] track correct/incorrect questions
-- [ ] Tic-Tac-Toe
-	- [ ] game board
-	- [ ] validate moves
-	- [ ] place moves
-	- [ ] detect winner
-- [ ] Integration
-	- [ ] Combine together
-	- [ ] require correct answer before move
-	- [ ] GUI
+	- [x] track correct/incorrect questions
+- [ ] Quiz GUI
+    - [ ] Question classes from console app
+    - [ ] Form design
+    - [ ] Getting user input
+    - [ ] Swapping between players
 ## Planning – show evidence of how you plan to create you program. (A)
-- [ ]  Quiz
+- [x] Console Quiz
     - [X] Question class
 	- [X] Put questions into arrays
 	- [X] Ask questions using random item and Console.Writeline
 	- [X] Get and validate user input using Console.ReadLine
-	- [ ] track correct/incorrect questions
+	- [x] track correct/incorrect questions
 	- [X] Populate question arrays
-- [ ]  Tic-Tac-Toe
-	- [ ] Game board saved as char array
-		- [ ] '?' for not used
-		- [ ] 'X' for player 1
-		- [ ] 'O' for player 2
-	- [ ] game board using 9 buttons on GUI
-	- [ ] validate moves with function that checks array
-	- [ ] place moves
-	- [ ] detect winner
-- [ ]  Integration
-	- [ ] Combine together
-	- [ ] require correct answer before move
-	- [ ] GUI
+- [ ] Quiz GUI
+    - [ ] Transfer Question and Questions classes from console app
+    - [ ] Design the form (4 main buttons, 2 main text areas)
+    - [ ] Code for buttons, relating the button to what the current question is and if it's correct
+    - [ ] Managing swapping between players (Player class??)
+    - [ ] Mass testing
 
 ## Evidence of Trialing your components (A, M, E)
 

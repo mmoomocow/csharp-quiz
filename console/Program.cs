@@ -223,7 +223,7 @@ namespace console
 				// Pre-define an int for the answer outside of the scope of the while loop
 				int answerInt;
 				// Another while loop used for input, for the same reasons as above
-				while (!Int32.TryParse(Console.ReadLine(), out answerInt))
+				while (!Int32.TryParse(Console.ReadLine(), out answerInt) && answerInt <= 1 && answerInt >= 4)
 				{
 					// Tell the user that their answer is not valid, and to try again
 					Console.WriteLine("Thats not a valid answer, please try again!");
@@ -263,17 +263,17 @@ namespace console
 				Console.WriteLine("You got non correct, but you can only go up from here");
 			}
 			// If they got more than 75%
-			else if (userScore <= (numberOfQuestions * 0.75))
+			else if (userScore >= (numberOfQuestions * 0.75))
 			{
 				Console.WriteLine($"Amazing! You got {userScore}/{numberOfQuestions} correct. Can you get them all next time?");
 			}
 			// If they got more than 50%
-			else if (userScore <= (numberOfQuestions * 0.5))
+			else if (userScore >= (numberOfQuestions * 0.5))
 			{
 				Console.WriteLine($"Pretty good, you got {userScore}/{numberOfQuestions}. Can you do better?");
 			}
 			// If they got more than 25%
-			else if (userScore <= (numberOfQuestions * 0.25))
+			else if (userScore >= (numberOfQuestions * 0.25))
 			{
 				Console.WriteLine($"Not bad, but only {userScore}/{numberOfQuestions} correct, ");
 			}

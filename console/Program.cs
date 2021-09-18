@@ -84,6 +84,38 @@ namespace console
 			new Question("In what decade was the Order of the Hospital of St John of Jerusalem start?", (new string[] { "1110", "1060", "1150", "1070" }), 3, "The exact date of when the order formed is unknown, however it is believed to be in 1070."),
 			new Question("When was the order become a royal order?", (new string[] { "1888", "1873", "1891", "1915" }), 0, "It was in 1888 when Queen Victoria granted the order of St John royal charter and the royal beasts were added to the Amalfi cross"),
 		};
+
+		/// <summary>
+		/// Pick a random question from the chosen list.
+		/// Removes the question from the list to prevent asking the same question multiple times.
+		/// </summary>
+		/// <param name="questionType">The question type of the question: 0 = First Aid  -  1 = Vital Signs  -  2 = Written Test</param>
+		/// <param name="rand">The random object to generate index values from</param>
+		/// <returns></returns>
+		public Question randomQuestion(int questionType, Random rand)
+		{
+			if (questionType == 0)
+			{
+				int randomIndex = rand.Next(0, firstAid.Count);
+				Question randomQuestion = firstAid[randomIndex];
+				firstAid.RemoveAt(randomIndex);
+				return randomQuestion;
+			}
+			else if (questionType == 1)
+			{
+				int randomIndex = rand.Next(0, vitalSigns.Count);
+				Question randomQuestion = vitalSigns[randomIndex];
+				vitalSigns.RemoveAt(randomIndex);
+				return randomQuestion;
+			}
+			else
+			{
+				int randomIndex = rand.Next(0, writtenTest.Count);
+				Question randomQuestion = writtenTest[randomIndex];
+				writtenTest.RemoveAt(randomIndex);
+				return randomQuestion;
+			}
+		}
 	}
 
 	/// <summary>

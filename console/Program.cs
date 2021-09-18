@@ -223,7 +223,7 @@ namespace console
 				// Pre-define an int for the answer outside of the scope of the while loop
 				int answerInt;
 				// Another while loop used for input, for the same reasons as above
-				while (!Int32.TryParse(Console.ReadLine(), out answerInt))
+				while (!Int32.TryParse(Console.ReadLine(), out answerInt) && answerInt <= 1 && answerInt >= 4)
 				{
 					// Tell the user that their answer is not valid, and to try again
 					Console.WriteLine("Thats not a valid answer, please try again!");

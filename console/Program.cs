@@ -109,6 +109,9 @@ namespace console
 				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
 			}
 
+			// Create the userScore variable
+			int userScore = 0;
+
 
 			// Ask 5 questions of the same type
 			// set i as 0; While i < 5; Add 1 to i
@@ -180,11 +183,15 @@ namespace console
 				{
 					// Congratulate the user
 					Console.WriteLine("Thats correct!!");
+					userScore++;
 				}
 
 				// Space out questions
 				Console.WriteLine("\n\n");
 			}
+
+			// Tell the user how well they did
+			Console.WriteLine($"You got {userScore} questions correct!!");
 
 			// To prevent the program exiting instantly
 			Console.ReadLine();

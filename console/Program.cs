@@ -98,6 +98,7 @@ namespace console
 		{
 			if (questionType == 0)
 			{
+				if (firstAid.Count == 0) { throw new Exception("There are no more questions in this array"); }
 				int randomIndex = rand.Next(0, firstAid.Count - 1);
 				Question randomQuestion = firstAid[randomIndex];
 				firstAid.RemoveAt(randomIndex);
@@ -105,6 +106,7 @@ namespace console
 			}
 			else if (questionType == 1)
 			{
+				if (vitalSigns.Count == 0) { throw new Exception("There are no more questions in this array"); }
 				int randomIndex = rand.Next(0, vitalSigns.Count - 1);
 				Question randomQuestion = vitalSigns[randomIndex];
 				vitalSigns.RemoveAt(randomIndex);
@@ -112,6 +114,7 @@ namespace console
 			}
 			else
 			{
+				if (writtenTest.Count == 0) { throw new Exception("There are no more questions in this array"); }
 				int randomIndex = rand.Next(0, writtenTest.Count - 1);
 				Question randomQuestion = writtenTest[randomIndex];
 				writtenTest.RemoveAt(randomIndex);
@@ -160,6 +163,7 @@ namespace console
 
 			// Construct the user's 'unique' set of questions
 			Questions player1Questions = new Questions(rnd);
+			player1Questions.pickQuestionType();
 
 			// Create the userScore variable
 			int userScore = 0;

@@ -86,40 +86,41 @@ My target audience is my St John youth team, a group of 13 - 17 year olds who ha
 * Check that there are code comments to explain the code
 
 ## List the components of your program (A)
-* Quiz
-    * Question struct
-	* Ask questions
-	* Check user input
-	* track correct/incorrect questions
-* Tic-Tac-Toe
-	* game board
-	* validate moves
-	* place moves
-	* detect winner
-* Integration
-	* Combine together
-	* require correct answer before move
-	* GUI
+- [ ] Quiz
+    - [X] Question struct
+	- [X] Ask questions
+	- [X] Check user input
+	- [ ] track correct/incorrect questions
+- [ ] Tic-Tac-Toe
+	- [ ] game board
+	- [ ] validate moves
+	- [ ] place moves
+	- [ ] detect winner
+- [ ] Integration
+	- [ ] Combine together
+	- [ ] require correct answer before move
+	- [ ] GUI
 ## Planning – show evidence of how you plan to create you program. (A)
-* Quiz
-    * [Question structure](https://www.w3schools.com/cs/cs_constructors.php)
-	* Put questions into arrays
-	* Ask questions using random item and Console.Writeline
-	* Get and validate user input using Console.ReadLine
-	* track correct/incorrect questions
-* Tic-Tac-Toe
-	* Game board saved as char array
-		* '?' for not used
-		* 'X' for player 1
-		* 'O' for player 2
-	* game board using 9 buttons on GUI
-	* validate moves with function that checks array
-	* place moves
-	* detect winner
-* Integration
-	* Combine together
-	* require correct answer before move
-	* GUI
+- [ ]  Quiz
+    - [X] Question class
+	- [X] Put questions into arrays
+	- [X] Ask questions using random item and Console.Writeline
+	- [X] Get and validate user input using Console.ReadLine
+	- [ ] track correct/incorrect questions
+	- [X] Populate question arrays
+- [ ]  Tic-Tac-Toe
+	- [ ] Game board saved as char array
+		- [ ] '?' for not used
+		- [ ] 'X' for player 1
+		- [ ] 'O' for player 2
+	- [ ] game board using 9 buttons on GUI
+	- [ ] validate moves with function that checks array
+	- [ ] place moves
+	- [ ] detect winner
+- [ ]  Integration
+	- [ ] Combine together
+	- [ ] require correct answer before move
+	- [ ] GUI
 
 ## Evidence of Trialing your components (A, M, E)
 

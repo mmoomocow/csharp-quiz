@@ -70,7 +70,7 @@ namespace console
 			};
 
 			Question[] Questions_vitalSigns = {
-				new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", " 100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
+				new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", "100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
 				new Question("What's a normal palpated blood pressure?", (new string[] { "120/80", "120/P", "80/P", "130/70" }), 1, "As the blood pressure is palpated, there should be no bottom number, 120/p is normal."),
 				new Question("What is a normal BGL?", (new string[] { "2 mmol/L", "15 mmol/L", "12 mmol/L", "5 mmol/L" }), 3, "Anything less than or equal to 3 is considered low and requires intervention and anything above 10 is higher than normal."),
 				new Question("What is the lowest GCS score possible?", (new string[] { "0", "1", "2", "3" }), 3, "Each of the 3 areas of the GCS assessment is given a minimum score of 1, so less than 3 is not possible"),
@@ -109,10 +109,15 @@ namespace console
 				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
 			}
 
+			// Create the userScore variable
+			int userScore = 0;
+			// The number of questions to ask
+			int numberOfQuestions = 5;
+
 
 			// Ask 5 questions of the same type
-			// set i as 0; While i < 5; Add 1 to i
-			for (int i = 0; i < 5; i++)
+			// set i as 0; While i < numberOfQuestions; Add 1 to i
+			for (int i = 0; i < numberOfQuestions; i++)
 			{
 
 				// === Component - Selecting a random question ===
@@ -180,11 +185,46 @@ namespace console
 				{
 					// Congratulate the user
 					Console.WriteLine("Thats correct!!");
+					userScore++;
 				}
 
 				// Space out questions
 				Console.WriteLine("\n\n");
 			}
+
+			// Tell the user how well they did using an if statement
+
+			// If all questions were answered correctly
+			if (userScore == numberOfQuestions)
+			{
+				Console.WriteLine($"Perfect!!! You got all {userScore} of the {numberOfQuestions} questions correct! But can you do it again?");
+			}
+			// If they got none correct
+			else if (userScore == 0)
+			{
+				Console.WriteLine("You got non correct, but you can only go up from here");
+			}
+			// If they got more than 75%
+			else if (userScore <= (numberOfQuestions * 0.75))
+			{
+				Console.WriteLine($"Amazing! You got {userScore}/{numberOfQuestions} correct. Can you get them all next time?");
+			}
+			// If they got more than 50%
+			else if (userScore <= (numberOfQuestions * 0.5))
+			{
+				Console.WriteLine($"Pretty good, you got {userScore}/{numberOfQuestions}. Can you do better?");
+			}
+			// If they got more than 25%
+			else if (userScore <= (numberOfQuestions * 0.25))
+			{
+				Console.WriteLine($"Not bad, but only {userScore}/{numberOfQuestions} correct, ");
+			}
+			// If they got less than 25%
+			else
+			{
+				Console.WriteLine($"You got {userScore}/{numberOfQuestions}. Learn from your mistakes!");
+			}
+
 
 			// To prevent the program exiting instantly
 			Console.ReadLine();

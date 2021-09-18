@@ -87,14 +87,14 @@ namespace console
 
 		private Random rand;
 
+		private int questionType;
+
 		/// <summary>
 		/// Pick a random question from the chosen list.
 		/// Removes the question from the list to prevent asking the same question multiple times.
 		/// </summary>
-		/// <param name="questionType">The question type of the question: 0 = First Aid  -  1 = Vital Signs  -  2 = Written Test</param>
-		/// <param name="rand">The random object to generate index values from</param>
-		/// <returns></returns>
-		public Question randomQuestion(int questionType)
+		/// <returns>A randomly selected question object</returns>
+		public Question randomQuestion()
 		{
 			if (questionType == 0)
 			{
@@ -120,6 +120,25 @@ namespace console
 		}
 
 		/// <summary>
+		/// Get the user to choose the type of question they want
+		/// </summary>
+		public void pickQuestionType()
+		{
+			int chosen;
+			Console.WriteLine("What question type do you want? \n1. First aid and Triage \n2. Vital Signs \n3. Written Test");
+			// Get the user's input
+			// Using a while loop and TryParse reduces the amount of code required, and the loop will only run when TryParse fails
+			while (!Int32.TryParse(Console.ReadLine(), out chosen) && chosen >= 1 && chosen <= 3)
+			{
+				// Tell the user that their choice is not valid
+				Console.WriteLine("Thats not a valid choice! please try again");
+				// and ask again
+				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
+			}
+			questionType = chosen - 1;
+		}
+
+		/// <summary>
 		/// Constructs a default Questions object
 		/// </summary>
 		public Questions(Random randomNumberGenerator) { rand = randomNumberGenerator; }
@@ -142,22 +161,6 @@ namespace console
 			// Construct the user's 'unique' set of questions
 			Questions player1Questions = new Questions(rnd);
 
-			// === Component - Deciding question type ===
-			// Pre-define an int for the type outside of the scope of the while loop
-			int questionType;
-			// Ask the user what question type they want
-			Console.WriteLine("What question type do you want? \n1. First aid and Triage \n2. Vital Signs \n3. Written Test");
-			// Get the user's input
-			// Using a while loop and TryParse reduces the amount of code required, and the loop will only run when
-			// TryParse fails
-			while (!Int32.TryParse(Console.ReadLine(), out questionType) && questionType >= 1 && questionType <= 4)
-			{
-				// Tell the user that their choice is not valid
-				Console.WriteLine("Thats not a valid choice! please try again");
-				// and ask again
-				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
-			}
-
 			// Create the userScore variable
 			int userScore = 0;
 			// The number of questions to ask
@@ -169,7 +172,7 @@ namespace console
 			for (int i = 0; i < numberOfQuestions; i++)
 			{
 				// Get a random question based on the selected question type
-				Question randomQuestion = player1Questions.randomQuestion(questionType - 1);
+				Question randomQuestion = player1Questions.randomQuestion();
 
 
 				// === Component - Asking the user a question ===

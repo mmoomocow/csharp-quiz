@@ -28,7 +28,7 @@ jobs:
         tag=$(git describe --tags --abbrev=0)
         release_name="App-$tag-Windows"
         # Build everything
-        dotnet publish console/console.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" p:PublishSingleFile=true --self-contained false
+        dotnet publish console/console.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" /p:PublishSingleFile=true --self-contained false
 
         7z a -tzip "${release_name}.zip" "./${release_name}/*"
 

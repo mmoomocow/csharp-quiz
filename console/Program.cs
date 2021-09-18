@@ -110,71 +110,80 @@ namespace console
 			}
 
 
-			// === Component - Selecting a random question ===
-			// Define the randomQuestion variable outside of the scope of the switch
-			Question randomQuestion;
-			// Use a switch statement to get the correct question type
-			// A switch statement is used here because it allows simple expantion of the program 
-			switch (questionType)
+			// Ask 5 questions of the same type
+			// set i as 0; While i < 5; Add 1 to i
+			for (int i = 0; i < 5; i++)
 			{
-				// If the user gives question type 2 as their answer
-				case 2:
-					// Generate a random number, it will be >= 0 and <= the length of the array
-					// Then get the item in that index position of the array
-					randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
-					break;
-				// If the user gives question type 3 as their answer
-				case 3:
-					// Generate a random number, it will be >= 0 and <= the length of the array
-					// Then get the item in that index position of the array
-					randomQuestion = Questions_writtenTest[rnd.Next(Questions_writtenTest.Length)];
-					break;
-				// Having a default case is required, if the switch hasn't triggered yet it will run this
-				default:
-					// Generate a random number, it will be >= 0 and <= the length of the array
-					// Then get the item in that index position of the array
-					randomQuestion = Questions_firstAid[rnd.Next(Questions_firstAid.Length)];
-					break;
-			}
 
+				// === Component - Selecting a random question ===
+				// Define the randomQuestion variable outside of the scope of the switch
+				Question randomQuestion;
+				// Use a switch statement to get the correct question type
+				// A switch statement is used here because it allows simple expantion of the program 
+				switch (questionType)
+				{
+					// If the user gives question type 2 as their answer
+					case 2:
+						// Generate a random number, it will be >= 0 and <= the length of the array
+						// Then get the item in that index position of the array
+						randomQuestion = Questions_vitalSigns[rnd.Next(Questions_vitalSigns.Length)];
+						break;
+					// If the user gives question type 3 as their answer
+					case 3:
+						// Generate a random number, it will be >= 0 and <= the length of the array
+						// Then get the item in that index position of the array
+						randomQuestion = Questions_writtenTest[rnd.Next(Questions_writtenTest.Length)];
+						break;
+					// Having a default case is required, if the switch hasn't triggered yet it will run this
+					default:
+						// Generate a random number, it will be >= 0 and <= the length of the array
+						// Then get the item in that index position of the array
+						randomQuestion = Questions_firstAid[rnd.Next(Questions_firstAid.Length)];
+						break;
+				}
 
-			// === Component - Asking the user the question ===
+				// === Component - Asking the user a question ===
 
-			// Write the question text of the randomly selected question
-			Console.WriteLine(randomQuestion.questionText);
-			// Use a for loop to iterate through all possible answers
-			for (int i = 0; i < randomQuestion.possibleAnswers.Length; i++)
-			{
-				// Print the possible answer number and the possible answer
-				// the i + 1 is used because normal people count from 1
-				// and starting from 0 (as would happen due to it being the index position)
-				// could confuse them
-				Console.WriteLine($"{i + 1}) {randomQuestion.possibleAnswers[i]}");
-			}
+				// Write the question text of the randomly selected question
+				Console.WriteLine(randomQuestion.questionText);
+				// Use a for loop to iterate through all possible answers
+				// Changed from i because i is defined by the main question loop
+				for (int j = 0; j < randomQuestion.possibleAnswers.Length; j++)
+				{
+					// Print the possible answer number and the possible answer
+					// the j + 1 is used because normal people count from 1
+					// and starting from 0 (as would happen due to it being the index position)
+					// could confuse them
+					Console.WriteLine($"{j + 1}) {randomQuestion.possibleAnswers[j]}");
+				}
 
-			// === Component - Handeling the user's response ===
+				// === Component - Handeling the user's response ===
 
-			// Pre-define an int for the answer outside of the scope of the while loop
-			int answerInt;
-			// Another while loop used for input, for the same reasons as above
-			while (!Int32.TryParse(Console.ReadLine(), out answerInt))
-			{
-				// Tell the user that their answer is not valid, and to try again
-				Console.WriteLine("Thats not a valid answer, please try again!");
-				// Loop!
-			}
+				// Pre-define an int for the answer outside of the scope of the while loop
+				int answerInt;
+				// Another while loop used for input, for the same reasons as above
+				while (!Int32.TryParse(Console.ReadLine(), out answerInt))
+				{
+					// Tell the user that their answer is not valid, and to try again
+					Console.WriteLine("Thats not a valid answer, please try again!");
+					// Loop!
+				}
 
-			// If the answer is not correct
-			if (answerInt != (randomQuestion.correctIndex + 1))
-			{
-				// Tell the user the answer is incorrect, then give the correct answer and an explanation for why the answer is correct
-				Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}\n{randomQuestion.explanation}");
-			}
-			// Else it is correct
-			else
-			{
-				// Congratulate the user
-				Console.WriteLine("Thats correct!!");
+				// If the answer is not correct
+				if (answerInt != (randomQuestion.correctIndex + 1))
+				{
+					// Tell the user the answer is incorrect, then give the correct answer and an explanation for why the answer is correct
+					Console.WriteLine($"Sorry, thats not correct. The correct answer was: \n{randomQuestion.correctIndex + 1}) {randomQuestion.possibleAnswers[randomQuestion.correctIndex]}\n{randomQuestion.explanation}");
+				}
+				// Else it is correct
+				else
+				{
+					// Congratulate the user
+					Console.WriteLine("Thats correct!!");
+				}
+
+				// Space out questions
+				Console.WriteLine("\n\n");
 			}
 
 			// To prevent the program exiting instantly

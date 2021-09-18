@@ -175,9 +175,25 @@ namespace console
 			// set i as 0; While i < numberOfQuestions; Add 1 to i
 			for (int i = 0; i < numberOfQuestions; i++)
 			{
+				// set the scope of the random question variable
+				Question randomQuestion = null;
 				// Get a random question based on the selected question type
-				Question randomQuestion = player1Questions.randomQuestion();
-
+				// And catch any exceptions, as the function has been programmed to throw them
+				while (randomQuestion == null)
+				{
+					try
+					{
+						randomQuestion = player1Questions.randomQuestion();
+					}
+					catch (Exception ex)
+					{
+						if (ex.Message == "no more questions")
+						{
+							Console.WriteLine("You've been asked all of the questions of that type, please select a new type");
+							player1Questions.pickQuestionType();
+						}
+					}
+				}
 
 				// === Component - Asking the user a question ===
 

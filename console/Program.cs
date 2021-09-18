@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace console
 {
@@ -65,6 +65,8 @@ namespace console
 				new Question("What operation code is used for 'Urgent but not Immediately Life Threatening'", (new string[] { "Purple", "Orange", "Yellow", "Green" }), 1, "Operation code orange is defined as Urgent but not Immediately Life Threatening"),
 				new Question("What status code is the following patient: 13-year-old female with an open fracture of the wrist", (new string[] { "Status 4", "Status 3", "Status 2", "Status 1" }), 1, "As there is a broken long bone and bleeding they are status 3. It is unlikely to be life threatening."),
 				new Question("Status code 0 is:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 0, "Dead patients are given the status code 0"),
+				new Question("Cardboard splints cannot be used on:", (new string[] { "Arms", "Wrists", "The Neck", "Legs" }), 2, "Splints can only be applied to the limbs, wrists and ankles. For the neck we have special equipment"),
+				new Question("A ROSC would be experienced after a:", (new string[] { "Broken Leg", "Cardiac Arrest", "Spinal injury", "Brief loss of consciousness" }), 1, "A ROSC is a 'Return Of Spontaneous Circulation' after a cardiac arrest")
 			};
 
 			Question[] Questions_vitalSigns = {

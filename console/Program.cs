@@ -109,10 +109,15 @@ namespace console
 				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
 			}
 
+			// Create the userScore variable
+			int userScore = 0;
+			// The number of questions to ask
+			int numberOfQuestions = 5;
+
 
 			// Ask 5 questions of the same type
-			// set i as 0; While i < 5; Add 1 to i
-			for (int i = 0; i < 5; i++)
+			// set i as 0; While i < numberOfQuestions; Add 1 to i
+			for (int i = 0; i < numberOfQuestions; i++)
 			{
 
 				// === Component - Selecting a random question ===
@@ -180,11 +185,46 @@ namespace console
 				{
 					// Congratulate the user
 					Console.WriteLine("Thats correct!!");
+					userScore++;
 				}
 
 				// Space out questions
 				Console.WriteLine("\n\n");
 			}
+
+			// Tell the user how well they did using an if statement
+
+			// If all questions were answered correctly
+			if (userScore == numberOfQuestions)
+			{
+				Console.WriteLine($"Perfect!!! You got all {userScore} of the {numberOfQuestions} questions correct! But can you do it again?");
+			}
+			// If they got none correct
+			else if (userScore == 0)
+			{
+				Console.WriteLine("You got non correct, but you can only go up from here");
+			}
+			// If they got more than 75%
+			else if (userScore <= (numberOfQuestions * 0.75))
+			{
+				Console.WriteLine($"Amazing! You got {userScore}/{numberOfQuestions} correct. Can you get them all next time?");
+			}
+			// If they got more than 50%
+			else if (userScore <= (numberOfQuestions * 0.5))
+			{
+				Console.WriteLine($"Pretty good, you got {userScore}/{numberOfQuestions}. Can you do better?");
+			}
+			// If they got more than 25%
+			else if (userScore <= (numberOfQuestions * 0.25))
+			{
+				Console.WriteLine($"Not bad, but only {userScore}/{numberOfQuestions} correct, ");
+			}
+			// If they got less than 25%
+			else
+			{
+				Console.WriteLine($"You got {userScore}/{numberOfQuestions}. Learn from your mistakes!");
+			}
+
 
 			// To prevent the program exiting instantly
 			Console.ReadLine();

@@ -6,22 +6,8 @@ on:
 
 jobs:
   release:
-    name: Dotnet on ${{ matrix.os }}
-    strategy:
-      matrix:
-        kind: ['linux', 'windows', 'macOS']
-        include:
-          - kind: linux
-            os: ubuntu-latest
-            target: linux-x64
-          - kind: windows
-            os: windows-latest
-            target: win-x64
-          - kind: macOS
-            os: macos-latest
-            target: osx-x64
-
-    runs-on: ${{ matrix.os }}
+    name: Dotnet v5.0 for windows
+    runs-on: windows-latest
 
     steps:
     - name: Checkout
@@ -40,24 +26,18 @@ jobs:
       shell: bash
       run: |
         tag=$(git describe --tags --abbrev=0)
-        release_name="App-$tag-${{ matrix.target }}"
+        release_name="App-$tag-Windows"
         # Build everything
-        dotnet publish console/console.csproj --framework net5.0 --runtime "${{ matrix.target }}" -c Release -o "$release_name"
-        # Pack files
-        if [ "${{ matrix.target }}" == "win-x64" ]; then
-          # Pack to zip for Windows
-          7z a -tzip "${release_name}.zip" "./${release_name}/*"
-        else
-        tar czvf "${release_name}.tar.gz" "$release_name"
-        fi
-        # Delete output directory
+        dotnet publish console/console.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" p:PublishSingleFile=true --self-contained false
+
+        7z a -tzip "${release_name}.zip" "./${release_name}/*"
+
         rm -r "$release_name"
 
     - name: Publish
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          *.md
           *.tar.gz
           *.zip
       env:

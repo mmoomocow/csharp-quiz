@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace console
@@ -138,6 +138,10 @@ namespace console
 		{
 			// Create the random generator
 			Random rnd = new Random();
+
+
+			// Construct the user's 'unique' set of questions
+			Questions player1Questions = new Questions(rnd);
 
 			// === Component - Deciding question type ===
 			// Pre-define an int for the type outside of the scope of the while loop

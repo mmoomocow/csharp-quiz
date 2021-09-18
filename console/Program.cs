@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace console
@@ -139,7 +139,6 @@ namespace console
 			// Create the random generator
 			Random rnd = new Random();
 
-
 			// Construct the user's 'unique' set of questions
 			Questions player1Questions = new Questions(rnd);
 
@@ -169,6 +168,10 @@ namespace console
 			// set i as 0; While i < numberOfQuestions; Add 1 to i
 			for (int i = 0; i < numberOfQuestions; i++)
 			{
+				// Get a random question based on the selected question type
+				Question randomQuestion = player1Questions.randomQuestion(questionType - 1);
+
+
 				// === Component - Asking the user a question ===
 
 				// Write the question text of the randomly selected question

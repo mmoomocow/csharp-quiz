@@ -101,7 +101,6 @@ namespace console
 				if (firstAid.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, firstAid.Count - 1);
 				Question randomQuestion = firstAid[randomIndex];
-				firstAid.RemoveAt(randomIndex);
 				return randomQuestion;
 			}
 			else if (questionType == 1)
@@ -109,7 +108,6 @@ namespace console
 				if (vitalSigns.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, vitalSigns.Count - 1);
 				Question randomQuestion = vitalSigns[randomIndex];
-				vitalSigns.RemoveAt(randomIndex);
 				return randomQuestion;
 			}
 			else
@@ -117,9 +115,19 @@ namespace console
 				if (writtenTest.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, writtenTest.Count - 1);
 				Question randomQuestion = writtenTest[randomIndex];
-				writtenTest.RemoveAt(randomIndex);
 				return randomQuestion;
 			}
+		}
+
+		/// <summary>
+		/// Remove a question from the currently selected question list
+		/// </summary>
+		/// <param name="question">The question to remove</param>
+		public void removeQuestion(Question question)
+		{
+			if (questionType == 0) { firstAid.Remove(question); }
+			else if (questionType == 1) { vitalSigns.Remove(question); }
+			else { writtenTest.Remove(question); }
 		}
 
 		/// <summary>
@@ -233,6 +241,8 @@ namespace console
 				{
 					// Congratulate the user
 					Console.WriteLine("Thats correct!!");
+					// Remove the question from the list
+					player1Questions.removeQuestion(randomQuestion);
 					userScore++;
 				}
 

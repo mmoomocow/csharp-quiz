@@ -57,7 +57,7 @@ namespace console
 			// Create questions. 
 			// Each array of questions is a different type
 			// The questions are created from the Question constructor
-			Question[] Questions_triage = {
+			Question[] Questions_firstAid = {
 				new Question("Status 1 is considered to be:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
 				new Question("A patient with stroke symptoms and < 3 hour onset would be what status?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 1, "Stroke patients with a symptom onset of < 3.5 hours are considered status 2"),
 				new Question("A patient was in a RTC but has no apparent injuries, what status are they?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 3, "If the patient has no injuries they are status 4, MOI should not be considered when determining status codes"),
@@ -131,7 +131,7 @@ namespace console
 				default:
 					// Generate a random number, it will be >= 0 and <= the length of the array
 					// Then get the item in that index position of the array
-					randomQuestion = Questions_triage[rnd.Next(Questions_triage.Length)];
+					randomQuestion = Questions_firstAid[rnd.Next(Questions_firstAid.Length)];
 					break;
 			}
 

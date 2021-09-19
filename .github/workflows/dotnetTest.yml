@@ -13,7 +13,7 @@ jobs:
     strategy:
         matrix:
           os: [ ubuntu-latest, windows-latest ]
-          dir: [ console ]
+          dir: [ console, gui ]
     defaults:
       run:
         working-directory: ${{ matrix.dir }}

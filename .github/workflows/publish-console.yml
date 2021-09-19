@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    name: Publish with dotnet v5.0 for windows
+    name: Publish console app with dotnet v5.0 for windows
     runs-on: windows-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
       shell: bash
       run: |
         tag=$(git describe --tags --abbrev=0)
-        release_name="App-$tag-Windows"
+        release_name="console-$tag-Windows"
 
         dotnet publish console/console.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" //p:PublishSingleFile=true --self-contained false
 
@@ -40,7 +40,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          *.tar.gz
           *.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,45 @@
+name: Publish gui App
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Publish GUI app with dotnet v5.0 for windows
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Setup .NET 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+
+    - name: Setup .NET 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+
+    - name: Build
+      shell: bash
+      run: |
+        tag=$(git describe --tags --abbrev=0)
+        release_name="GUI-$tag-Windows"
+
+        dotnet publish console/console.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" //p:PublishSingleFile=true --self-contained false
+
+        7z a -tzip "${release_name}.zip" "./${release_name}/*"
+
+        rm -r "$release_name"
+
+    - name: Publish
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          *.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

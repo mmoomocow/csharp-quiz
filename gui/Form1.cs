@@ -15,6 +15,31 @@ namespace gui
 		Questions player1Questions = new Questions(new Random());
 		Question currentQuestion;
 
+		bool choosingQuestionType = false;
+		void pickQuestionType()
+        {
+			answerExplanation.Text = "";
+			questionText.Text = "Please choose the question type you want to be asked";
+			AnswerBtn1.Text = "Triage & First aid";
+			AnswerBtn2.Text = "Vital Signs";
+			AnswerBtn3.Text = "Written Test";
+			AnswerBtn4.Text = "";
+			AnswerBtn4.Enabled = false;
+			NextQuestion.Enabled = false;
+		}
+		void handelPickQuestionType(int chosen) 
+		{
+			answerExplanation.Text = "";
+			player1Questions.setQuestionType(chosen);
+			questionText.Text = "Question type chosen, hit next question to continue";
+			AnswerBtn1.Text = "";
+			AnswerBtn2.Text = "";
+			AnswerBtn3.Text = "";
+			AnswerBtn4.Text = "";
+			AnswerBtn4.Enabled = true;
+			NextQuestion.Enabled = true;
+		}
+
 		public quizApp()
 		{
 			InitializeComponent();
@@ -22,22 +47,27 @@ namespace gui
 
 		private void AnswerBtn1_Click(object sender, EventArgs e)
 		{
-
+			if (choosingQuestionType) {
+				
+			}
 		}
 
 		private void AnswerBtn2_Click(object sender, EventArgs e)
 		{
-
+			if (choosingQuestionType) {
+			}
 		}
 
 		private void AnswerBtn3_Click(object sender, EventArgs e)
 		{
-
+			if (choosingQuestionType) {
+			}
 		}
 
 		private void AnswerBtn4_Click(object sender, EventArgs e)
 		{
-
+			if (choosingQuestionType) {
+			}
 		}
 
         private void NextQuestion_Click(object sender, EventArgs e)
@@ -182,19 +212,8 @@ namespace gui
 		/// <summary>
 		/// Get the user to choose the type of question they want
 		/// </summary>
-		public void pickQuestionType()
+		public void setQuestionType(int chosen)
 		{
-			int chosen;
-			Console.WriteLine("What question type do you want? \n1. First aid and Triage \n2. Vital Signs \n3. Written Test");
-			// Get the user's input
-			// Using a while loop and TryParse reduces the amount of code required, and the loop will only run when TryParse fails
-			while (!Int32.TryParse(Console.ReadLine(), out chosen) && chosen >= 1 && chosen <= 3)
-			{
-				// Tell the user that their choice is not valid
-				Console.WriteLine("Thats not a valid choice! please try again");
-				// and ask again
-				Console.WriteLine("What question type do you want? \n1. Triage \n2. Vital Signs \n3. Written Test");
-			}
 			questionType = chosen - 1;
 		}
 

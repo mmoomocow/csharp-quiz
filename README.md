@@ -7,7 +7,7 @@ The quiz app and game that is being used for my internals, AS91883 and AS91884.
 [AS91884 - Use basic iterative processes to develop a digital outcome](https://www.nzqa.govt.nz/nqfdocs/ncea-resource/achievements/2019/as91884.pdf)
 
 ## Purpose of the program
-The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive quiz. The compedative aspect of the quiz will incentivise them to do well, and learn more so they can do better
+The purpose of the program is to **train our St John youth team** for regional comps by having a fun and competitive quiz. The competitive aspect of the quiz will incentivize them to do well, and learn more so they can do better
 
 ## Target audience
 My target audience is my St John youth team, a group of 13 - 17 year olds who have an understanding of basic first aid, and are learning more complex first aid.

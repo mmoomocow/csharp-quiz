@@ -12,8 +12,8 @@ namespace gui
 {
 	public partial class quizApp : Form
 	{
-		Random rnd = new Random();
-		Questions player1Questions = new Questions(rnd);
+		Questions player1Questions = new Questions(new Random());
+		Question currentQuestion;
 
 		public quizApp()
 		{
@@ -42,9 +42,16 @@ namespace gui
 
         private void NextQuestion_Click(object sender, EventArgs e)
         {
+			currentQuestion = player1Questions.randomQuestion();
+			answerExplanation.Text = "";
+			questionText.Text = currentQuestion.questionText;
+			AnswerBtn1.Text = currentQuestion.possibleAnswers[0];
+			AnswerBtn2.Text = currentQuestion.possibleAnswers[1];
+			AnswerBtn3.Text = currentQuestion.possibleAnswers[2];
+			AnswerBtn4.Text = currentQuestion.possibleAnswers[3];
 
-        }
-    }
+		}
+	}
 
     #region classes
     /// <summary>
@@ -89,7 +96,7 @@ namespace gui
 	/// </summary>
 	public class Questions
 	{
-		private List<Question> firstAid = new List<Question>
+		private readonly List<Question> firstAid = new List<Question>
 		{
 			new Question("Status 1 is considered to be:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
 			new Question("A patient with stroke symptoms and < 3 hour onset would be what status?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 1, "Stroke patients with a symptom onset of < 3.5 hours are considered status 2"),
@@ -102,7 +109,7 @@ namespace gui
 			new Question("A ROSC would be experienced after a:", (new string[] { "Broken Leg", "Cardiac Arrest", "Spinal injury", "Brief loss of consciousness" }), 1, "A ROSC is a 'Return Of Spontaneous Circulation' after a cardiac arrest")
 		};
 
-		private List<Question> vitalSigns = new List<Question>
+		private readonly List<Question> vitalSigns = new List<Question>
 		{
 			new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", "100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
 			new Question("What's a normal palpated blood pressure?", (new string[] { "120/80", "120/P", "80/P", "130/70" }), 1, "As the blood pressure is palpated, there should be no bottom number, 120/p is normal."),
@@ -115,7 +122,7 @@ namespace gui
 			new Question("Which of these is not one of the 3 categories in the GCS scale", (new string[] { "Eye opening", "Pain response", "Motor response", "Verbal response" }), 1, "Pain response is measured as part of eye opening and motor response but is not one of the 3 catagories"),
 		};
 
-		private List<Question> writtenTest = new List<Question> {
+		private readonly List<Question> writtenTest = new List<Question> {
 			new Question("How many Districts are there in the south island?", (new string[] { "7", "9", "10", "11" }), 1, "There are 9 districts, Mid Canterbury, North Canterbury, Christchurch, Costal Otago, Central Otago, Southland, Aoraki, West Coast and Nelson Marlborough."),
 			new Question("How many regions are there in New Zealand", (new string[] { "1", "2", "3", "4" }), 2, "There are 3 regions, Northern, Central and South Island"),
 			new Question("How many areas are there in the Costal Otago district?", (new string[] { "5", "8", "6", "4" }), 0, "There are 5 areas, South, Costal otago, Ara te uru, Taieri, and Otepoti"),
@@ -127,7 +134,7 @@ namespace gui
 			new Question("When did the order become a royal order?", (new string[] { "1888", "1873", "1891", "1915" }), 0, "It was in 1888 when Queen Victoria granted the order of St John royal charter and the royal beasts were added to the Amalfi cross"),
 		};
 
-		private Random rand;
+		private readonly Random rand;
 
 		private int questionType;
 

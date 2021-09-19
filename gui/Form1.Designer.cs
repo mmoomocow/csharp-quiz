@@ -121,7 +121,6 @@ namespace gui
             // 
             // NextQuestion
             // 
-            this.NextQuestion.Enabled = false;
             this.NextQuestion.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextQuestion.Location = new System.Drawing.Point(74, 345);
             this.NextQuestion.Name = "NextQuestion";

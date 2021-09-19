@@ -10,13 +10,49 @@ using System.Windows.Forms;
 
 namespace gui
 {
-	#region classes
-	/// <summary>
-	/// The question class is used to represent a question, it is used because creating multiple question objects and placing them
-	/// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
-	/// Without the object 4 arrays would be needed per question type
-	/// </summary>
-	public class Question
+	public partial class quizApp : Form
+	{
+		Random rnd = new Random();
+		Questions player1Questions = new Questions(rnd);
+
+		public quizApp()
+		{
+			InitializeComponent();
+		}
+
+		private void AnswerBtn1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void AnswerBtn2_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void AnswerBtn3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void AnswerBtn4_Click(object sender, EventArgs e)
+		{
+
+		}
+
+        private void NextQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    #region classes
+    /// <summary>
+    /// The question class is used to represent a question, it is used because creating multiple question objects and placing them
+    /// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
+    /// Without the object 4 arrays would be needed per question type
+    /// </summary>
+    public class Question
 	{
 		/// <summary>The question text</summary>
 		public string questionText;
@@ -162,35 +198,4 @@ namespace gui
 	}
 
 	#endregion classes
-
-	public partial class quizApp : Form
-	{
-		Random rnd = new Random();
-		Questions player1Questions = new Questions(rnd);
-
-		public quizApp()
-		{
-			InitializeComponent();
-		}
-
-		private void AnswerBtn1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AnswerBtn2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AnswerBtn3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AnswerBtn4_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
 }

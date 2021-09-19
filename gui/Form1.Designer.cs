@@ -36,6 +36,7 @@ namespace gui
             this.questionText = new System.Windows.Forms.Label();
             this.answerExplanation = new System.Windows.Forms.Label();
             this.playerTurn = new System.Windows.Forms.Label();
+            this.NextQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AnswerBtn4
@@ -118,11 +119,24 @@ namespace gui
             this.playerTurn.TabIndex = 10;
             this.playerTurn.Text = "It is player x\'s turn";
             // 
+            // NextQuestion
+            // 
+            this.NextQuestion.Enabled = false;
+            this.NextQuestion.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NextQuestion.Location = new System.Drawing.Point(74, 345);
+            this.NextQuestion.Name = "NextQuestion";
+            this.NextQuestion.Size = new System.Drawing.Size(232, 44);
+            this.NextQuestion.TabIndex = 11;
+            this.NextQuestion.Text = "Next Question";
+            this.NextQuestion.UseVisualStyleBackColor = true;
+            this.NextQuestion.Click += new System.EventHandler(this.NextQuestion_Click);
+            // 
             // quizApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.NextQuestion);
             this.Controls.Add(this.playerTurn);
             this.Controls.Add(this.answerExplanation);
             this.Controls.Add(this.questionText);
@@ -146,6 +160,7 @@ namespace gui
         private System.Windows.Forms.Label questionText;
         private System.Windows.Forms.Label answerExplanation;
         private System.Windows.Forms.Label playerTurn;
+        private System.Windows.Forms.Button NextQuestion;
     }
 }
 

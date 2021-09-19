@@ -1,7 +1,7 @@
 ﻿
 namespace gui
 {
-    partial class Form1
+    partial class quizApp
     {
         /// <summary>
         ///  Required designer variable.
@@ -114,7 +114,7 @@ namespace gui
             this.playerTurn.TabIndex = 10;
             this.playerTurn.Text = "It is player x\'s turn";
             // 
-            // Form1
+            // quizApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +126,7 @@ namespace gui
             this.Controls.Add(this.answerBtn3);
             this.Controls.Add(this.answerBtn2);
             this.Controls.Add(this.answerBtn1);
-            this.Name = "Form1";
+            this.Name = "quizApp";
             this.Text = "Quiz App";
             this.ResumeLayout(false);
             this.PerformLayout();

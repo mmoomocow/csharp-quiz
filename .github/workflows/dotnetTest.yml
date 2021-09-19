@@ -12,8 +12,8 @@ jobs:
     name: Dotnet on ${{ matrix.os }} for ${{ matrix.dir }} directory
     strategy:
         matrix:
-          os: [ ubuntu-latest, windows-latest ]
-          dir: [ console ]
+          os: [ windows-latest ]
+          dir: [ console, gui ]
     defaults:
       run:
         working-directory: ${{ matrix.dir }}

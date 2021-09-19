@@ -29,58 +29,62 @@ namespace gui
         /// </summary>
         private void InitializeComponent()
         {
-            this.answerBtn4 = new System.Windows.Forms.Button();
-            this.answerBtn3 = new System.Windows.Forms.Button();
-            this.answerBtn2 = new System.Windows.Forms.Button();
-            this.answerBtn1 = new System.Windows.Forms.Button();
+            this.AnswerBtn4 = new System.Windows.Forms.Button();
+            this.AnswerBtn3 = new System.Windows.Forms.Button();
+            this.AnswerBtn2 = new System.Windows.Forms.Button();
+            this.AnswerBtn1 = new System.Windows.Forms.Button();
             this.questionText = new System.Windows.Forms.Label();
             this.answerExplanation = new System.Windows.Forms.Label();
             this.playerTurn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // answerBtn4
+            // AnswerBtn4
             // 
-            this.answerBtn4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.answerBtn4.Location = new System.Drawing.Point(422, 330);
-            this.answerBtn4.Name = "answerBtn4";
-            this.answerBtn4.Size = new System.Drawing.Size(350, 100);
-            this.answerBtn4.TabIndex = 7;
-            this.answerBtn4.Text = "Answer button 4";
-            this.answerBtn4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.answerBtn4.UseVisualStyleBackColor = true;
+            this.AnswerBtn4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnswerBtn4.Location = new System.Drawing.Point(422, 330);
+            this.AnswerBtn4.Name = "AnswerBtn4";
+            this.AnswerBtn4.Size = new System.Drawing.Size(350, 100);
+            this.AnswerBtn4.TabIndex = 7;
+            this.AnswerBtn4.Text = "Answer button 4";
+            this.AnswerBtn4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AnswerBtn4.UseVisualStyleBackColor = true;
+            this.AnswerBtn4.Click += new System.EventHandler(this.AnswerBtn4_Click);
             // 
-            // answerBtn3
+            // AnswerBtn3
             // 
-            this.answerBtn3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.answerBtn3.Location = new System.Drawing.Point(422, 224);
-            this.answerBtn3.Name = "answerBtn3";
-            this.answerBtn3.Size = new System.Drawing.Size(350, 100);
-            this.answerBtn3.TabIndex = 6;
-            this.answerBtn3.Text = "Answer button 3";
-            this.answerBtn3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.answerBtn3.UseVisualStyleBackColor = true;
+            this.AnswerBtn3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnswerBtn3.Location = new System.Drawing.Point(422, 224);
+            this.AnswerBtn3.Name = "AnswerBtn3";
+            this.AnswerBtn3.Size = new System.Drawing.Size(350, 100);
+            this.AnswerBtn3.TabIndex = 6;
+            this.AnswerBtn3.Text = "Answer button 3";
+            this.AnswerBtn3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AnswerBtn3.UseVisualStyleBackColor = true;
+            this.AnswerBtn3.Click += new System.EventHandler(this.AnswerBtn3_Click);
             // 
-            // answerBtn2
+            // AnswerBtn2
             // 
-            this.answerBtn2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.answerBtn2.Location = new System.Drawing.Point(422, 118);
-            this.answerBtn2.Name = "answerBtn2";
-            this.answerBtn2.Size = new System.Drawing.Size(350, 100);
-            this.answerBtn2.TabIndex = 5;
-            this.answerBtn2.Text = "Answer button 2";
-            this.answerBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.answerBtn2.UseVisualStyleBackColor = true;
+            this.AnswerBtn2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnswerBtn2.Location = new System.Drawing.Point(422, 118);
+            this.AnswerBtn2.Name = "AnswerBtn2";
+            this.AnswerBtn2.Size = new System.Drawing.Size(350, 100);
+            this.AnswerBtn2.TabIndex = 5;
+            this.AnswerBtn2.Text = "Answer button 2";
+            this.AnswerBtn2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AnswerBtn2.UseVisualStyleBackColor = true;
+            this.AnswerBtn2.Click += new System.EventHandler(this.AnswerBtn2_Click);
             // 
-            // answerBtn1
+            // AnswerBtn1
             // 
-            this.answerBtn1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.answerBtn1.Location = new System.Drawing.Point(422, 12);
-            this.answerBtn1.Name = "answerBtn1";
-            this.answerBtn1.Size = new System.Drawing.Size(350, 100);
-            this.answerBtn1.TabIndex = 4;
-            this.answerBtn1.Text = "Answer button 1";
-            this.answerBtn1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.answerBtn1.UseVisualStyleBackColor = true;
+            this.AnswerBtn1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AnswerBtn1.Location = new System.Drawing.Point(422, 12);
+            this.AnswerBtn1.Name = "AnswerBtn1";
+            this.AnswerBtn1.Size = new System.Drawing.Size(350, 100);
+            this.AnswerBtn1.TabIndex = 4;
+            this.AnswerBtn1.Text = "Answer button 1";
+            this.AnswerBtn1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AnswerBtn1.UseVisualStyleBackColor = true;
+            this.AnswerBtn1.Click += new System.EventHandler(this.AnswerBtn1_Click);
             // 
             // questionText
             // 
@@ -122,10 +126,10 @@ namespace gui
             this.Controls.Add(this.playerTurn);
             this.Controls.Add(this.answerExplanation);
             this.Controls.Add(this.questionText);
-            this.Controls.Add(this.answerBtn4);
-            this.Controls.Add(this.answerBtn3);
-            this.Controls.Add(this.answerBtn2);
-            this.Controls.Add(this.answerBtn1);
+            this.Controls.Add(this.AnswerBtn4);
+            this.Controls.Add(this.AnswerBtn3);
+            this.Controls.Add(this.AnswerBtn2);
+            this.Controls.Add(this.AnswerBtn1);
             this.Name = "quizApp";
             this.Text = "Quiz App";
             this.ResumeLayout(false);
@@ -135,10 +139,10 @@ namespace gui
 
         #endregion
 
-        private System.Windows.Forms.Button answerBtn4;
-        private System.Windows.Forms.Button answerBtn3;
-        private System.Windows.Forms.Button answerBtn2;
-        private System.Windows.Forms.Button answerBtn1;
+        private System.Windows.Forms.Button AnswerBtn4;
+        private System.Windows.Forms.Button AnswerBtn3;
+        private System.Windows.Forms.Button AnswerBtn2;
+        private System.Windows.Forms.Button AnswerBtn1;
         private System.Windows.Forms.Label questionText;
         private System.Windows.Forms.Label answerExplanation;
         private System.Windows.Forms.Label playerTurn;

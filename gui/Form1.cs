@@ -17,5 +17,24 @@ namespace gui
             InitializeComponent();
         }
 
+        private void AnswerBtn1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AnswerBtn2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AnswerBtn3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AnswerBtn4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -33,6 +33,9 @@ namespace gui
             this.answerBtn3 = new System.Windows.Forms.Button();
             this.answerBtn2 = new System.Windows.Forms.Button();
             this.answerBtn1 = new System.Windows.Forms.Button();
+            this.questionText = new System.Windows.Forms.Label();
+            this.answerExplanation = new System.Windows.Forms.Label();
+            this.playerTurn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // answerBtn4
@@ -79,11 +82,46 @@ namespace gui
             this.answerBtn1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.answerBtn1.UseVisualStyleBackColor = true;
             // 
+            // questionText
+            // 
+            this.questionText.AutoSize = true;
+            this.questionText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.questionText.Location = new System.Drawing.Point(12, 51);
+            this.questionText.MaximumSize = new System.Drawing.Size(400, 75);
+            this.questionText.Name = "questionText";
+            this.questionText.Size = new System.Drawing.Size(119, 25);
+            this.questionText.TabIndex = 8;
+            this.questionText.Text = "Question Text";
+            // 
+            // answerExplanation
+            // 
+            this.answerExplanation.AutoSize = true;
+            this.answerExplanation.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.answerExplanation.Location = new System.Drawing.Point(12, 199);
+            this.answerExplanation.MaximumSize = new System.Drawing.Size(400, 75);
+            this.answerExplanation.Name = "answerExplanation";
+            this.answerExplanation.Size = new System.Drawing.Size(166, 25);
+            this.answerExplanation.TabIndex = 9;
+            this.answerExplanation.Text = "Answer explanation";
+            // 
+            // playerTurn
+            // 
+            this.playerTurn.AutoSize = true;
+            this.playerTurn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.playerTurn.Location = new System.Drawing.Point(13, 13);
+            this.playerTurn.Name = "playerTurn";
+            this.playerTurn.Size = new System.Drawing.Size(155, 25);
+            this.playerTurn.TabIndex = 10;
+            this.playerTurn.Text = "It is player x\'s turn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.playerTurn);
+            this.Controls.Add(this.answerExplanation);
+            this.Controls.Add(this.questionText);
             this.Controls.Add(this.answerBtn4);
             this.Controls.Add(this.answerBtn3);
             this.Controls.Add(this.answerBtn2);
@@ -91,6 +129,7 @@ namespace gui
             this.Name = "Form1";
             this.Text = "Quiz App";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,6 +139,9 @@ namespace gui
         private System.Windows.Forms.Button answerBtn3;
         private System.Windows.Forms.Button answerBtn2;
         private System.Windows.Forms.Button answerBtn1;
+        private System.Windows.Forms.Label questionText;
+        private System.Windows.Forms.Label answerExplanation;
+        private System.Windows.Forms.Label playerTurn;
     }
 }
 

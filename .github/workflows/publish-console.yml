@@ -30,7 +30,7 @@ jobs:
         tag=$(git describe --tags --abbrev=0)
         release_name="console-$tag-Windows"
 
-        dotnet publish console/console.csproj --framework net5.0 -r "win-x64" -c Release -o "$release_name" //p:PublishSingleFile=true //p:PublishReadyToRun=true
+        dotnet publish console/console.csproj --framework net5.0 -r "win-x64" -c Release -o "$release_name" //p:PublishSingleFile=true //p:PublishReadyToRun=true //p:IncludeNativeLibrariesForSelfExtract=true
 
         7z a -tzip "${release_name}.zip" "./${release_name}/*"
 

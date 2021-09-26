@@ -30,7 +30,7 @@ I will do this by:
 To ensure I am doing this I will
 
 * Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
-* Taking to the other members of my team to ensure the understand the questions
+* Test my program with the target audience
 
 ### Usability
 
@@ -73,8 +73,7 @@ To ensure I am doing this I will
 
 * Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
 * Repeated and frequent testing of new and existing features to ensure their functionality
-* Testing input fields to ensure they are client-proof
-* Testing the inputs with unusual values to ensure the sanity checks are working
+* Testing input fields to ensure they are "user-proof" and adding code checks to ensure this
 * Show the target audience the program and get their feedback on it's relevancy
 
 ### Sustainability and future proofing
@@ -98,7 +97,7 @@ I will do this by:
 To ensure I am doing this I will
 
 * Use efficient code to reduce storage space and resources required
-* Use github CodeQL to check all the code
+* Use github CodeQL to check all the code for quality, old conventions, 
 * Check that there are code comments to explain the code
 
 ## List the components of your program (A)
@@ -114,6 +113,8 @@ To ensure I am doing this I will
   * [ ] Form design
   * [ ] Getting user input
   * [ ] Swapping between players
+  * [ ] Asking questions
+  * [ ] Handling answer
 
 ## Planning – show evidence of how you plan to create you program. (A)
 
@@ -133,9 +134,19 @@ To ensure I am doing this I will
   * [ ] Mass testing
 
 ## Evidence of Trialing your components (A, M, E)
+* [All issues that cause an error](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3A%22causes+error%22)
+* [All issues that are labeled as bugs](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3Abug)
+* [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 
 ## Evidence of Testing your components/program (A, M, E)
 
-[Tracking of issues is done on the github repo click here](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
+* [All issues that cause an error](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3A%22causes+error%22)
+* [All issues that are labeled as bugs](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3Abug)
+* [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 
 ## Evidence of addressing relevant implications (M)
+[Sustainability and future proofing - Adding code comments](https://github.com/mmoomocow/csharp-quiz/issues/8)
+[Error prevention](https://github.com/mmoomocow/csharp-quiz/issues/1)
+
+### Testing to diagnose and fix issues
+[Testing question asking and realising answers are incorrect](https://github.com/mmoomocow/csharp-quiz/issues/18)

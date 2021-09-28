@@ -102,19 +102,19 @@ To ensure I am doing this I will
 
 ## List the components of your program (A)
 
-* [x] Console Quiz
-  * [X] Question struct
-  * [X] Ask questions
-  * [X] Check user input
-  * [x] track correct/incorrect questions
+* Console Quiz
+  * Question struct
+  * Ask questions
+  * Check user input
+  * track correct/incorrect questions
 
-* [ ] Quiz GUI
-  * [ ] Question classes from console app
-  * [ ] Form design
-  * [ ] Getting user input
-  * [ ] Swapping between players
-  * [ ] Asking questions
-  * [ ] Handling answer
+* Quiz GUI
+  * [x] Question classes from console app
+  * Form design
+  * Getting user input
+  * Swapping between players
+  * Asking questions
+  * Handling answer
 
 ## Planning – show evidence of how you plan to create you program. (A)
 
@@ -127,8 +127,8 @@ To ensure I am doing this I will
   * [X] Populate question arrays
 
 * [ ] Quiz GUI
-  * [ ] Transfer Question and Questions classes from console app
-  * [ ] Design the form (4 main buttons, 2 main text areas)
+  * [x] Transfer Question and Questions classes from console app
+  * [x] Design the form (4 main buttons, 2 main text areas)
   * [ ] Code for buttons, relating the button to what the current question is and if it's correct
   * [ ] Managing swapping between players (Player class??)
   * [ ] Mass testing

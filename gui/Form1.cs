@@ -20,14 +20,15 @@ namespace gui
         {
 			answerExplanation.Text = "";
 			questionText.Text = "Please choose the question type you want to be asked";
-			AnswerBtn1.Text = "Triage & First aid";
+			AnswerBtn1.Text = "Triage and First aid";
 			AnswerBtn2.Text = "Vital Signs";
 			AnswerBtn3.Text = "Written Test";
 			AnswerBtn4.Text = "";
 			AnswerBtn4.Enabled = false;
 			NextQuestion.Enabled = false;
+			choosingQuestionType = true;
 		}
-		void handelPickQuestionType(int chosen) 
+		void HandlePickQuestionType(int chosen) 
 		{
 			answerExplanation.Text = "";
 			player1Questions.setQuestionType(chosen);
@@ -36,49 +37,109 @@ namespace gui
 			AnswerBtn2.Text = "";
 			AnswerBtn3.Text = "";
 			AnswerBtn4.Text = "";
-			AnswerBtn4.Enabled = true;
+			AnswerBtn1.Enabled = false;
+			AnswerBtn2.Enabled = false;
+			AnswerBtn3.Enabled = false;
+			AnswerBtn4.Enabled = false;
+			NextQuestion.Enabled = true;
+			choosingQuestionType = false;
+		}
+
+		void AnsweredQuestion(int indexOfButton)
+		{
+			if (currentQuestion.correctIndex == indexOfButton)
+			{
+				player1Questions.removeQuestion(currentQuestion);
+				questionText.Text = "You got it correct!!";
+			}
+			else
+			{
+				questionText.Text = "Sorry, that's not correct!";
+			}
+
+			answerExplanation.Text = currentQuestion.explanation;
+
+			AnswerBtn1.Text = "";
+			AnswerBtn2.Text = "";
+			AnswerBtn3.Text = "";
+			AnswerBtn4.Text = "";
+
+			AnswerBtn1.Enabled = false;
+			AnswerBtn2.Enabled = false;
+			AnswerBtn3.Enabled = false;
+			AnswerBtn4.Enabled = false;
+
 			NextQuestion.Enabled = true;
 		}
 
 		public quizApp()
 		{
 			InitializeComponent();
+			pickQuestionType();
 		}
 
 		private void AnswerBtn1_Click(object sender, EventArgs e)
 		{
 			if (choosingQuestionType) {
-				
+				HandlePickQuestionType(1);
+			}
+			else
+			{
+				AnsweredQuestion(0);
 			}
 		}
 
 		private void AnswerBtn2_Click(object sender, EventArgs e)
 		{
 			if (choosingQuestionType) {
+				HandlePickQuestionType(2);
+			}
+			else
+			{
+
+				AnsweredQuestion(1);
 			}
 		}
 
 		private void AnswerBtn3_Click(object sender, EventArgs e)
 		{
 			if (choosingQuestionType) {
+				HandlePickQuestionType(3);
+			}
+			else
+			{
+				AnsweredQuestion(2);
 			}
 		}
 
 		private void AnswerBtn4_Click(object sender, EventArgs e)
 		{
-			if (choosingQuestionType) {
-			}
+			AnsweredQuestion(3);
 		}
 
         private void NextQuestion_Click(object sender, EventArgs e)
         {
-			currentQuestion = player1Questions.randomQuestion();
+			try
+			{
+				currentQuestion = player1Questions.randomQuestion();
+			}
+			catch
+			{
+				pickQuestionType();
+				return;
+			}
+
 			answerExplanation.Text = "";
 			questionText.Text = currentQuestion.questionText;
 			AnswerBtn1.Text = currentQuestion.possibleAnswers[0];
 			AnswerBtn2.Text = currentQuestion.possibleAnswers[1];
 			AnswerBtn3.Text = currentQuestion.possibleAnswers[2];
 			AnswerBtn4.Text = currentQuestion.possibleAnswers[3];
+			AnswerBtn1.Enabled = true;
+			AnswerBtn2.Enabled = true;
+			AnswerBtn3.Enabled = true;
+			AnswerBtn4.Enabled = true;
+			NextQuestion.Enabled = false;
 
 		}
 	}

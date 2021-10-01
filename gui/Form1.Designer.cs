@@ -103,7 +103,7 @@ namespace gui
             this.answerExplanation.AutoSize = true;
             this.answerExplanation.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.answerExplanation.Location = new System.Drawing.Point(12, 199);
-            this.answerExplanation.MaximumSize = new System.Drawing.Size(400, 75);
+            this.answerExplanation.MaximumSize = new System.Drawing.Size(400, 200);
             this.answerExplanation.Name = "answerExplanation";
             this.answerExplanation.Size = new System.Drawing.Size(166, 25);
             this.answerExplanation.TabIndex = 9;
@@ -117,7 +117,7 @@ namespace gui
             this.playerTurn.Name = "playerTurn";
             this.playerTurn.Size = new System.Drawing.Size(155, 25);
             this.playerTurn.TabIndex = 10;
-            this.playerTurn.Text = "It is player x\'s turn";
+            this.playerTurn.Text = "It is player 1\'s turn";
             // 
             // NextQuestion
             // 

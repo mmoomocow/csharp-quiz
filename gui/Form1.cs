@@ -24,6 +24,9 @@ namespace gui
 			AnswerBtn2.Text = "Vital Signs";
 			AnswerBtn3.Text = "Written Test";
 			AnswerBtn4.Text = "";
+			AnswerBtn1.Enabled = true;
+			AnswerBtn2.Enabled = true;
+			AnswerBtn3.Enabled = true;
 			AnswerBtn4.Enabled = false;
 			NextQuestion.Enabled = false;
 			choosingQuestionType = true;
@@ -218,7 +221,7 @@ namespace gui
 			new Question("How many regions are there in New Zealand", (new string[] { "1", "2", "3", "4" }), 2, "There are 3 regions, Northern, Central and South Island"),
 			new Question("How many areas are there in the Costal Otago district?", (new string[] { "5", "8", "6", "4" }), 0, "There are 5 areas, South, Costal otago, Ara te uru, Taieri, and Otepoti"),
 			new Question("How many badges are there in the Grand Prior curriculum", (new string[] { "15", "23", "27", "31" }), 2, "There are 27 badges you can achieve under the grand prior system. This is because green, blue and gold levels are counted as one badge."),
-			new Question("How many hours of comunity service are required to get a green shield?", (new string[] { "100 hours", "200 hours", "500 hours", "800 hours" }), 1, "200 hours gives you a blue shield."),
+			new Question("How many hours of comunity service are required to get a green shield?", (new string[] { "100 hours", "200 hours", "500 hours", "800 hours" }), 2, "100 hours is a grey shield, 200 hours is a red shield, 500 hours is a green shield, 800 hours is a blue shield and 1000 hours is a gold shield"),
 			new Question("Which of these is not a St John program", (new string[] { "Operations", "Therapy Pets", "1737", "FEDs" }), 2, "St John's community programs include Operations, Therapy Pets, FEDs, Medical Alarms, St John in schools and more. 1737 is independent, but a good resource to use"),
 			new Question("Which of these is not one of St John's cardinal values on the Amalfi Cross?", (new string[] { "Compassion", "Prudence", "Temperance", "Fortitude" }), 0, "The 4 cardinal values on the Amalfi Cross are Prudence, Justice, Temperance and Fortitude"),
 			new Question("In what decade was the Order of the Hospital of St John of Jerusalem start?", (new string[] { "1110", "1060", "1150", "1070" }), 3, "The exact date of when the order formed is unknown, however it is believed to be in 1070."),

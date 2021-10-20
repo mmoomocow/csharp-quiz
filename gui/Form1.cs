@@ -17,7 +17,7 @@ namespace gui
 
 		bool choosingQuestionType = false;
 		void pickQuestionType()
-        {
+		{
 			answerExplanation.Text = "";
 			questionText.Text = "Please choose the question type you want to be asked";
 			AnswerBtn1.Text = "Triage and First aid";
@@ -31,7 +31,7 @@ namespace gui
 			NextQuestion.Enabled = false;
 			choosingQuestionType = true;
 		}
-		void HandlePickQuestionType(int chosen) 
+		void HandlePickQuestionType(int chosen)
 		{
 			answerExplanation.Text = "";
 			player1Questions.setQuestionType(chosen);
@@ -83,7 +83,8 @@ namespace gui
 
 		private void AnswerBtn1_Click(object sender, EventArgs e)
 		{
-			if (choosingQuestionType) {
+			if (choosingQuestionType)
+			{
 				HandlePickQuestionType(1);
 			}
 			else
@@ -94,7 +95,8 @@ namespace gui
 
 		private void AnswerBtn2_Click(object sender, EventArgs e)
 		{
-			if (choosingQuestionType) {
+			if (choosingQuestionType)
+			{
 				HandlePickQuestionType(2);
 			}
 			else
@@ -106,7 +108,8 @@ namespace gui
 
 		private void AnswerBtn3_Click(object sender, EventArgs e)
 		{
-			if (choosingQuestionType) {
+			if (choosingQuestionType)
+			{
 				HandlePickQuestionType(3);
 			}
 			else
@@ -120,8 +123,8 @@ namespace gui
 			AnsweredQuestion(3);
 		}
 
-        private void NextQuestion_Click(object sender, EventArgs e)
-        {
+		private void NextQuestion_Click(object sender, EventArgs e)
+		{
 			try
 			{
 				currentQuestion = player1Questions.randomQuestion();
@@ -147,13 +150,13 @@ namespace gui
 		}
 	}
 
-    #region classes
-    /// <summary>
-    /// The question class is used to represent a question, it is used because creating multiple question objects and placing them
-    /// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
-    /// Without the object 4 arrays would be needed per question type
-    /// </summary>
-    public class Question
+	#region classes
+	/// <summary>
+	/// The question class is used to represent a question, it is used because creating multiple question objects and placing them
+	/// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
+	/// Without the object 4 arrays would be needed per question type
+	/// </summary>
+	public class Question
 	{
 		/// <summary>The question text</summary>
 		public string questionText;
@@ -192,13 +195,13 @@ namespace gui
 	{
 		private readonly List<Question> firstAid = new List<Question>
 		{
-			new Question("Status 1 is considered to be:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
+			new Question("Status 1 is considered to be:", (new string[] { "deceased", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
 			new Question("A patient with stroke symptoms and < 3 hour onset would be what status?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 1, "Stroke patients with a symptom onset of < 3.5 hours are considered status 2"),
 			new Question("A patient was in a RTC but has no apparent injuries, what status are they?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 3, "If the patient has no injuries they are status 4, MOI should not be considered when determining status codes"),
 			new Question("A patient walks over to you complaining of a toothache, what status are they?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 3, "Toothaches are not medically urgent"),
 			new Question("What operation code is used for 'Urgent but not Immediately Life Threatening'", (new string[] { "Purple", "Orange", "Yellow", "Green" }), 1, "Operation code orange is defined as Urgent but not Immediately Life Threatening"),
 			new Question("What status code is the following patient: 13-year-old female with an open fracture of the wrist", (new string[] { "Status 4", "Status 3", "Status 2", "Status 1" }), 1, "As there is a broken long bone and bleeding they are status 3. It is unlikely to be life threatening."),
-			new Question("Status code 0 is:", (new string[] { "Dead", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 0, "Dead patients are given the status code 0"),
+			new Question("Status code 0 is:", (new string[] { "deceased", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 0, "deceased patients are given the status code 0"),
 			new Question("Cardboard splints cannot be used on:", (new string[] { "Arms", "Wrists", "The Neck", "Legs" }), 2, "Splints can only be applied to the limbs, wrists and ankles. For the neck we have special equipment"),
 			new Question("A ROSC would be experienced after a:", (new string[] { "Broken Leg", "Cardiac Arrest", "Spinal injury", "Brief loss of consciousness" }), 1, "A ROSC is a 'Return Of Spontaneous Circulation' after a cardiac arrest")
 		};

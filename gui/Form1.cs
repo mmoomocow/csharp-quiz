@@ -12,10 +12,18 @@ namespace gui
 {
 	public partial class quizApp : Form
 	{
+		// Define player 1's questions
 		Questions player1Questions = new Questions(new Random());
+		// pre-define the current question
 		Question currentQuestion;
 
+		// Choose question type toggle
 		bool choosingQuestionType = false;
+
+		/// <summary>
+		/// First part of getting the user to pick a question type
+		/// Sets the text for all the buttons and enables/disables the relevant buttons
+		/// </summary>
 		void pickQuestionType()
 		{
 			answerExplanation.Text = "";
@@ -31,6 +39,11 @@ namespace gui
 			NextQuestion.Enabled = false;
 			choosingQuestionType = true;
 		}
+		/// <summary>
+		/// Handle a user's choice of question type.
+		/// Then disable all the buttons
+		/// <param name="chosen">The option number that was picked by the user, non-index values<param>
+		/// </summary>
 		void HandlePickQuestionType(int chosen)
 		{
 			answerExplanation.Text = "";
@@ -47,79 +60,117 @@ namespace gui
 			NextQuestion.Enabled = true;
 			choosingQuestionType = false;
 		}
-
+		/// <summary>
+		/// Handle the user's answer to a question
+		/// <param name="indexOfButton">The index value of the answer button<param>
+		/// </summary>
 		void AnsweredQuestion(int indexOfButton)
 		{
+			// If the user answered correctly 
 			if (currentQuestion.correctIndex == indexOfButton)
 			{
+				// Remove the question
 				player1Questions.removeQuestion(currentQuestion);
+				// and tell the user the answer was correct
 				questionText.Text = "You got it correct!!";
 			}
+			// Else the question was wrong
 			else
 			{
+				// Tell the user it was not correct
+				// Don't remove the question as it gives the user an opertunuty to learn
 				questionText.Text = "Sorry, that's not correct!";
 			}
 
+			// Explain the correct answer to the user
 			answerExplanation.Text = currentQuestion.explanation;
 
+			// Clear the button text
 			AnswerBtn1.Text = "";
 			AnswerBtn2.Text = "";
 			AnswerBtn3.Text = "";
 			AnswerBtn4.Text = "";
 
+			// Disable the answer buttons
 			AnswerBtn1.Enabled = false;
 			AnswerBtn2.Enabled = false;
 			AnswerBtn3.Enabled = false;
 			AnswerBtn4.Enabled = false;
 
+			// Enable the next question button
 			NextQuestion.Enabled = true;
 		}
 
+		// When the app starts
 		public quizApp()
 		{
+			// init the app
 			InitializeComponent();
+			// get the user to pick a question type
 			pickQuestionType();
 		}
 
+		// Answer button, index 0, position 1
+		// This function is called when the user presses answer button 1
 		private void AnswerBtn1_Click(object sender, EventArgs e)
 		{
+			// If the user is choosing the question type
 			if (choosingQuestionType)
 			{
+				// Run the function to handle the question type answer, with the non-index position of the button as the input variable
 				HandlePickQuestionType(1);
 			}
+			// Else the user is answering the question
 			else
 			{
+				// Run the function to handle the question answer, with the index postition of the button as the input variable
 				AnsweredQuestion(0);
 			}
 		}
 
+		// Answer button, index 1, position 2
+		// This function is called when the user presses answer button 1
 		private void AnswerBtn2_Click(object sender, EventArgs e)
 		{
+			// If the user is choosing the question type
 			if (choosingQuestionType)
 			{
+				// Run the function to handle the question type answer, with the non-index position of the button as the input variable
 				HandlePickQuestionType(2);
 			}
+			// Else the user is answering the question
 			else
 			{
+				// Run the function to handle the question answer, with the index postition of the button as the input variable
 
 				AnsweredQuestion(1);
 			}
 		}
 
+		// Answer button, index 2, position 3
+		// This function is called when the user presses answer button 1
 		private void AnswerBtn3_Click(object sender, EventArgs e)
 		{
+			// If the user is choosing the question type
 			if (choosingQuestionType)
 			{
+				// Run the function to handle the question type answer, with the non-index position of the button as the input variable
 				HandlePickQuestionType(3);
 			}
+			// Else the user is answering the question
 			else
 			{
+				// Run the function to handle the question answer, with the index postition of the button as the input variable
 				AnsweredQuestion(2);
 			}
 		}
 
+		// Answer button, index 3, position 4
+		// This function is called when the user presses answer button 1
 		private void AnswerBtn4_Click(object sender, EventArgs e)
 		{
+			// Run the function to handle the question answer, with the index postition of the button as the input variable
+			// as the button is disabed when selecting the question type, we don't need to use the 'choosingQuestionType' check
 			AnsweredQuestion(3);
 		}
 

@@ -49,11 +49,17 @@ I will do this by
 * Not making an interface that is very simple/complex
 * Using a readable font
 
-To ensure I am doing this I will
+I have done this by:
 
-* Test my program with my target audience and collecting feedback
-* Ensuring text can be read
-* Checking my program against the usability heuristics
+* Frequently testing my program
+  1. Testing it myself using edge cases
+  2. Testing it with other people in my class
+  3. Testing it with other members of the team
+* Designing a simple interface
+  * The interface is simple to use and provides instructions on how to use it.
+  * All buttons are labled to make them easier to use
+  * A GUI application was chosen because it is easier to use than a console app
+* Using a font that is readable 
 
 ### Functionality
 

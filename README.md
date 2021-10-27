@@ -77,12 +77,12 @@ I will do this by:
 * Implementing "sanity checks" in all inputs to ensure errors cannot be caused
 * Making the program relevant to the purpose and target audience
 
-To ensure I am doing this I will
+I have done this by:
 
-* Refer to the purpose of the program whenever adding new features, to ensure it fits with the purpose
-* Repeated and frequent testing of new and existing features to ensure their functionality
-* Testing input fields to ensure they are "user-proof" and adding code checks to ensure this
-* Show the target audience the program and get their feedback on it's relevancy
+* Repeatedly testing the program to make sure all features work as intended
+* Testing areas where the user can make inputs to ensure they are robust
+* Implementing all the features of the program so it can be used fully
+* Checking user inputs are valid before attempting to use them
 
 ### Sustainability and future proofing
 

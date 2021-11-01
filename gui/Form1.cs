@@ -174,28 +174,39 @@ namespace gui
 			AnsweredQuestion(3);
 		}
 
+		// The next question button.
 		private void NextQuestion_Click(object sender, EventArgs e)
 		{
+			// Try and get a new question
 			try
 			{
+				// Using the class function
 				currentQuestion = player1Questions.randomQuestion();
 			}
+			// Catch the no more questions exception
 			catch
 			{
+				// Get the user to pick a new question type
 				pickQuestionType();
+				// Don't continue
 				return;
 			}
 
+			// Clear the explanation text
 			answerExplanation.Text = "";
+			// Ask the question
 			questionText.Text = currentQuestion.questionText;
+			// Populate the answer buttons
 			AnswerBtn1.Text = currentQuestion.possibleAnswers[0];
 			AnswerBtn2.Text = currentQuestion.possibleAnswers[1];
 			AnswerBtn3.Text = currentQuestion.possibleAnswers[2];
 			AnswerBtn4.Text = currentQuestion.possibleAnswers[3];
+			// Enable all the answer buttons
 			AnswerBtn1.Enabled = true;
 			AnswerBtn2.Enabled = true;
 			AnswerBtn3.Enabled = true;
 			AnswerBtn4.Enabled = true;
+			// Disable the next question button
 			NextQuestion.Enabled = false;
 
 		}

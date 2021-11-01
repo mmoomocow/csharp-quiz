@@ -12,6 +12,8 @@ namespace gui
 {
 	public partial class quizApp : Form
 	{
+		#region Variables
+
 		// Define player 1's questions
 		Questions player1Questions = new Questions(new Random());
 		// pre-define the current question
@@ -19,6 +21,10 @@ namespace gui
 
 		// Choose question type toggle
 		bool choosingQuestionType = false;
+
+		#endregion Variables
+
+		#region Functions
 
 		/// <summary>
 		/// First part of getting the user to pick a question type
@@ -101,6 +107,10 @@ namespace gui
 			NextQuestion.Enabled = true;
 		}
 
+		#endregion Functions
+
+		#region Quiz startup
+
 		// When the app starts
 		public quizApp()
 		{
@@ -109,6 +119,10 @@ namespace gui
 			// get the user to pick a question type
 			pickQuestionType();
 		}
+
+		#endregion Quiz startup
+
+		#region Button Clicks
 
 		// Answer button, index 0, position 1
 		// This function is called when the user presses answer button 1
@@ -211,6 +225,8 @@ namespace gui
 
 		}
 	}
+
+	#endregion Button Clicks
 
 	#region classes
 	/// <summary>

@@ -102,11 +102,14 @@ I will do this by:
 * Adding code comments
 * Using common and up-to-date c# conventions
 
-To ensure I am doing this I will
+I have done this by:
 
-* Use efficient code to reduce storage space and resources required
-* Use github CodeQL to check all the code for quality, old conventions, 
-* Check that there are code comments to explain the code
+* Using minimal resources to run the program
+* Keeping my code understandable and readable
+  * Using code comments
+  * Correct indentation
+  * Usable variable names
+* 
 
 ## List the components of your program (A)
 

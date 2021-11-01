@@ -224,9 +224,8 @@ namespace gui
 			NextQuestion.Enabled = false;
 
 		}
+		#endregion Button Clicks
 	}
-
-	#endregion Button Clicks
 
 	#region classes
 	/// <summary>

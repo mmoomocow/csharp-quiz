@@ -126,6 +126,7 @@ I have done this by:
   * Swapping between players
   * Asking questions
   * Handling answer
+  * User Score
 
 ## Planning – show evidence of how you plan to create you program. (A)
 
@@ -140,7 +141,7 @@ I have done this by:
 * [ ] Quiz GUI
   * [x] Transfer Question and Questions classes from console app
   * [x] Design the form (4 main buttons, 2 main text areas)
-  * [ ] Code for buttons, relating the button to what the current question is and if it's correct
+  * [x] Code for buttons, relating the button to what the current question is and if it's correct
   * [ ] Managing swapping between players (Player class??)
   * [ ] Mass testing
 

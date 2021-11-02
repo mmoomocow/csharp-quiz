@@ -22,6 +22,7 @@ namespace gui
 		// Choose question type toggle
 		bool choosingQuestionType = false;
 
+
 		#endregion Variables
 
 		#region Functions

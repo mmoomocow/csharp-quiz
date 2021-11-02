@@ -152,14 +152,14 @@ namespace gui
 
         #endregion
 
-        private System.Windows.Forms.Button AnswerBtn4;
-        private System.Windows.Forms.Button AnswerBtn3;
-        private System.Windows.Forms.Button AnswerBtn2;
-        private System.Windows.Forms.Button AnswerBtn1;
-        private System.Windows.Forms.Label questionText;
-        private System.Windows.Forms.Label answerExplanation;
-        private System.Windows.Forms.Label playerTurn;
-        private System.Windows.Forms.Button NextQuestion;
+        public System.Windows.Forms.Button AnswerBtn4;
+        public System.Windows.Forms.Button AnswerBtn3;
+        public System.Windows.Forms.Button AnswerBtn2;
+        public System.Windows.Forms.Button AnswerBtn1;
+        public System.Windows.Forms.Label questionText;
+        public System.Windows.Forms.Label answerExplanation;
+        public System.Windows.Forms.Label playerTurn;
+        public System.Windows.Forms.Button NextQuestion;
     }
 }
 

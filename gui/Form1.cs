@@ -309,6 +309,21 @@ namespace gui
 			new Question("When did the order become a royal order?", (new string[] { "1888", "1873", "1891", "1915" }), 0, "It was in 1888 when Queen Victoria granted the order of St John royal charter and the royal beasts were added to the Amalfi cross"),
 		};
 
+		// Score variables for the first aid questions
+		public int firstAidTimesAsked = 0;
+		public int firstAidCorrect = 0;
+		public int firstAidPossible = firstAid.Count;
+
+		// Score variables 
+		public int vitalSignsTimesAsked = 0;
+		public int vitalSignsCorrect = 0;
+		public int vitalSignsPossible = vitalSigns.Count;
+
+		// Score variables
+		public int writtenTestTimesAsked = 0;
+		public int writtenTestCorrect = 0;
+		public int writtenTestPossible = writtenTest.Count;
+
 		private readonly Random rand;
 
 		private int questionType;
@@ -325,6 +340,7 @@ namespace gui
 				if (firstAid.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, firstAid.Count - 1);
 				Question randomQuestion = firstAid[randomIndex];
+				firstAidTimesAsked++;
 				return randomQuestion;
 			}
 			else if (questionType == 1)
@@ -332,6 +348,7 @@ namespace gui
 				if (vitalSigns.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, vitalSigns.Count - 1);
 				Question randomQuestion = vitalSigns[randomIndex];
+				vitalSignsTimesAsked++;
 				return randomQuestion;
 			}
 			else
@@ -339,6 +356,7 @@ namespace gui
 				if (writtenTest.Count == 0) { throw new Exception("no more questions"); }
 				int randomIndex = rand.Next(0, writtenTest.Count - 1);
 				Question randomQuestion = writtenTest[randomIndex];
+				writtenTestTimesAsked++;
 				return randomQuestion;
 			}
 		}
@@ -349,9 +367,9 @@ namespace gui
 		/// <param name="question">The question to remove</param>
 		public void removeQuestion(Question question)
 		{
-			if (questionType == 0) { firstAid.Remove(question); }
-			else if (questionType == 1) { vitalSigns.Remove(question); }
-			else { writtenTest.Remove(question); }
+			if (questionType == 0) { firstAid.Remove(question); firstAidCorrect++; }
+			else if (questionType == 1) { vitalSigns.Remove(question); vitalSignsCorrect++; }
+			else { writtenTest.Remove(question); writtenTestCorrect++; }
 		}
 
 		/// <summary>

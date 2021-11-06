@@ -37,6 +37,7 @@ namespace gui
             this.answerExplanation = new System.Windows.Forms.Label();
             this.playerTurn = new System.Windows.Forms.Label();
             this.NextQuestion = new System.Windows.Forms.Button();
+            this.score = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AnswerBtn4
@@ -91,7 +92,7 @@ namespace gui
             // 
             this.questionText.AutoSize = true;
             this.questionText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.questionText.Location = new System.Drawing.Point(12, 51);
+            this.questionText.Location = new System.Drawing.Point(12, 63);
             this.questionText.MaximumSize = new System.Drawing.Size(400, 75);
             this.questionText.Name = "questionText";
             this.questionText.Size = new System.Drawing.Size(119, 25);
@@ -115,7 +116,7 @@ namespace gui
             this.playerTurn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.playerTurn.Location = new System.Drawing.Point(13, 13);
             this.playerTurn.Name = "playerTurn";
-            this.playerTurn.Size = new System.Drawing.Size(155, 25);
+            this.playerTurn.Size = new System.Drawing.Size(157, 25);
             this.playerTurn.TabIndex = 10;
             this.playerTurn.Text = "It is player 1\'s turn";
             // 
@@ -130,11 +131,23 @@ namespace gui
             this.NextQuestion.UseVisualStyleBackColor = true;
             this.NextQuestion.Click += new System.EventHandler(this.NextQuestion_Click);
             // 
+            // score
+            // 
+            this.score.AutoSize = true;
+            this.score.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.score.Location = new System.Drawing.Point(12, 38);
+            this.score.MaximumSize = new System.Drawing.Size(400, 75);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(111, 25);
+            this.score.TabIndex = 12;
+            this.score.Text = "Your score is";
+            // 
             // quizApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.score);
             this.Controls.Add(this.NextQuestion);
             this.Controls.Add(this.playerTurn);
             this.Controls.Add(this.answerExplanation);
@@ -160,6 +173,7 @@ namespace gui
         public System.Windows.Forms.Label answerExplanation;
         public System.Windows.Forms.Label playerTurn;
         public System.Windows.Forms.Button NextQuestion;
+        public System.Windows.Forms.Label score;
     }
 }
 

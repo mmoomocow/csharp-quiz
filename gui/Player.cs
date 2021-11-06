@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace gui
 {
-    #region classes
+	#region classes
 
-    /// <summary>
-    /// Questions for the quiz. 
-    /// Each use should have a separate object, as asked questions are removed from the list
-    /// </summary>
-    public class Questions
+	/// <summary>
+	/// Questions for the quiz. 
+	/// Each use should have a separate object, as asked questions are removed from the list
+	/// </summary>
+	public class Player
 	{
-		private readonly List<Question> firstAid = new List<Question>
+		private readonly List<Question> questions_firstAid = new List<Question>
 		{
 			new Question("Status 1 is considered to be:", (new string[] { "deceased", "Potentially immediately life threatening", "Not medically urgent", "Immediately life threatening" }), 3, "Status one is used to describe someone who's condition is immediately life threatening"),
 			new Question("A patient with stroke symptoms and < 3 hour onset would be what status?", (new string[] { "Status 1", "Status 2", "Status 3", "Status 4" }), 1, "Stroke patients with a symptom onset of < 3.5 hours are considered status 2"),
@@ -24,7 +24,7 @@ namespace gui
 			new Question("A ROSC would be experienced after a:", (new string[] { "Broken Leg", "Cardiac Arrest", "Spinal injury", "Brief loss of consciousness" }), 1, "A ROSC is a 'Return Of Spontaneous Circulation' after a cardiac arrest")
 		};
 
-		private readonly List<Question> vitalSigns = new List<Question>
+		private readonly List<Question> questions_vitalSigns = new List<Question>
 		{
 			new Question("What is a normal Heart Rate?", (new string[] { "80 bpm", "120 bpm", "100 bpm", "60 bpm" }), 0, "80 bpm is an average heart rate, however the context of a scenario can change what would be expected."),
 			new Question("What's a normal palpated blood pressure?", (new string[] { "120/80", "120/P", "80/P", "130/70" }), 1, "As the blood pressure is palpated, there should be no bottom number, 120/p is normal."),
@@ -37,7 +37,7 @@ namespace gui
 			new Question("Which of these is not one of the 3 categories in the GCS scale", (new string[] { "Eye opening", "Pain response", "Motor response", "Verbal response" }), 1, "Pain response is measured as part of eye opening and motor response but is not one of the 3 catagories"),
 		};
 
-		private readonly List<Question> writtenTest = new List<Question> {
+		private readonly List<Question> questions_writtenTest = new List<Question> {
 			new Question("How many Districts are there in the south island?", (new string[] { "7", "9", "10", "11" }), 1, "There are 9 districts, Mid Canterbury, North Canterbury, Christchurch, Costal Otago, Central Otago, Southland, Aoraki, West Coast and Nelson Marlborough."),
 			new Question("How many regions are there in New Zealand", (new string[] { "1", "2", "3", "4" }), 2, "There are 3 regions, Northern, Central and South Island"),
 			new Question("How many areas are there in the Costal Otago district?", (new string[] { "5", "8", "6", "4" }), 0, "There are 5 areas, South, Costal otago, Ara te uru, Taieri, and Otepoti"),
@@ -50,18 +50,18 @@ namespace gui
 		};
 
 		// Score variables for the first aid questions
-		public int firstAidTimesAsked = 0;
-		public int firstAidCorrect = 0;
+		public int score_firstAidTimesAsked = 0;
+		public int score_firstAidCorrect = 0;
 		// public int firstAidPossible = firstAid.Count;
 
 		// Score variables 
-		public int vitalSignsTimesAsked = 0;
-		public int vitalSignsCorrect = 0;
+		public int score_vitalSignsTimesAsked = 0;
+		public int score_vitalSignsCorrect = 0;
 		// public int vitalSignsPossible = vitalSigns.Count;
 
 		// Score variables
-		public int writtenTestTimesAsked = 0;
-		public int writtenTestCorrect = 0;
+		public int score_writtenTestTimesAsked = 0;
+		public int score_writtenTestCorrect = 0;
 		// public int writtenTestPossible = writtenTest.Count;
 
 		private readonly Random rand;
@@ -77,26 +77,26 @@ namespace gui
 		{
 			if (questionType == 0)
 			{
-				if (firstAid.Count == 0) { throw new Exception("no more questions"); }
-				int randomIndex = rand.Next(0, firstAid.Count - 1);
-				Question randomQuestion = firstAid[randomIndex];
-				firstAidTimesAsked++;
+				if (questions_firstAid.Count == 0) { throw new Exception("no more questions"); }
+				int randomIndex = rand.Next(0, questions_firstAid.Count - 1);
+				Question randomQuestion = questions_firstAid[randomIndex];
+				score_firstAidTimesAsked++;
 				return randomQuestion;
 			}
 			else if (questionType == 1)
 			{
-				if (vitalSigns.Count == 0) { throw new Exception("no more questions"); }
-				int randomIndex = rand.Next(0, vitalSigns.Count - 1);
-				Question randomQuestion = vitalSigns[randomIndex];
-				vitalSignsTimesAsked++;
+				if (questions_vitalSigns.Count == 0) { throw new Exception("no more questions"); }
+				int randomIndex = rand.Next(0, questions_vitalSigns.Count - 1);
+				Question randomQuestion = questions_vitalSigns[randomIndex];
+				score_vitalSignsTimesAsked++;
 				return randomQuestion;
 			}
 			else
 			{
-				if (writtenTest.Count == 0) { throw new Exception("no more questions"); }
-				int randomIndex = rand.Next(0, writtenTest.Count - 1);
-				Question randomQuestion = writtenTest[randomIndex];
-				writtenTestTimesAsked++;
+				if (questions_writtenTest.Count == 0) { throw new Exception("no more questions"); }
+				int randomIndex = rand.Next(0, questions_writtenTest.Count - 1);
+				Question randomQuestion = questions_writtenTest[randomIndex];
+				score_writtenTestTimesAsked++;
 				return randomQuestion;
 			}
 		}
@@ -107,9 +107,9 @@ namespace gui
 		/// <param name="question">The question to remove</param>
 		public void removeQuestion(Question question)
 		{
-			if (questionType == 0) { firstAid.Remove(question); firstAidCorrect++; }
-			else if (questionType == 1) { vitalSigns.Remove(question); vitalSignsCorrect++; }
-			else { writtenTest.Remove(question); writtenTestCorrect++; }
+			if (questionType == 0) { questions_firstAid.Remove(question); score_firstAidCorrect++; }
+			else if (questionType == 1) { questions_vitalSigns.Remove(question); score_vitalSignsCorrect++; }
+			else { questions_writtenTest.Remove(question); score_writtenTestCorrect++; }
 		}
 
 		/// <summary>
@@ -123,7 +123,7 @@ namespace gui
 		/// <summary>
 		/// Constructs a default Questions object
 		/// </summary>
-		public Questions(Random randomNumberGenerator) { rand = randomNumberGenerator; }
+		public Player(Random randomNumberGenerator) { rand = randomNumberGenerator; }
 	}
 
 	#endregion classes

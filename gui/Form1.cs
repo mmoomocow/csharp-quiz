@@ -7,8 +7,11 @@ namespace gui
     {
         #region Variables
 
+		// Create a global random generator
+		Random random = new Random();
+
         // Define player 1's questions
-        Questions player1Questions = new Questions(new Random());
+        Player player1Questions = new Player(new Random());
         // pre-define the current question
         Question currentQuestion;
 

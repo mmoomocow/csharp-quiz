@@ -1,12 +1,12 @@
 ﻿namespace gui
 {
-    #region classes
-    /// <summary>
-    /// The question class is used to represent a question, it is used because creating multiple question objects and placing them
-    /// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
-    /// Without the object 4 arrays would be needed per question type
-    /// </summary>
-    public class Question
+	#region classes
+	/// <summary>
+	/// The question class is used to represent a question, it is used because creating multiple question objects and placing them
+	/// inside an array is a better option than having multiple arrays, especially when there are multiple question types.
+	/// Without the object 4 arrays would be needed per question type
+	/// </summary>
+	public class Question
 	{
 		/// <summary>The question text</summary>
 		public string questionText;

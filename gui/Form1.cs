@@ -7,7 +7,7 @@ namespace gui
 	{
 		#region Variables
 		// Define player 1's questions
-		readonly Player player1Questions = new Player(new Random());
+		readonly Player Player1 = new Player(new Random());
 		// pre-define the current question
 		Question currentQuestion;
 
@@ -45,7 +45,7 @@ namespace gui
 		void HandlePickQuestionType(int chosen)
 		{
 			answerExplanation.Text = "";
-			player1Questions.SetQuestionType(chosen);
+			Player1.SetQuestionType(chosen);
 			questionText.Text = "Question type chosen, hit next question to continue";
 			AnswerBtn1.Text = "";
 			AnswerBtn2.Text = "";
@@ -68,7 +68,7 @@ namespace gui
 			if (currentQuestion.correctIndex == indexOfButton)
 			{
 				// Remove the question
-				player1Questions.RemoveQuestion(currentQuestion);
+				Player1.RemoveQuestion(currentQuestion);
 				// and tell the user the answer was correct
 				questionText.Text = "You got it correct!!";
 			}
@@ -97,6 +97,10 @@ namespace gui
 
 			// Enable the next question button
 			NextQuestion.Enabled = true;
+
+			score.Text = $"You have been asked {Player1.score_firstAidTimesAsked} first aid questions and got {Player1.score_firstAidCorrect} correct\n" +
+				$"You have been asked {Player1.score_vitalSignsTimesAsked} first aid questions and got {Player1.score_vitalSignsCorrect} correct\n" +
+				$"You have been asked {Player1.score_writtenTestTimesAsked} first aid questions and got {Player1.score_writtenTestCorrect} correct\n";
 		}
 
 		#endregion Functions
@@ -187,7 +191,7 @@ namespace gui
 			try
 			{
 				// Using the class function
-				currentQuestion = player1Questions.RandomQuestion();
+				currentQuestion = Player1.RandomQuestion();
 			}
 			// Catch the no more questions exception
 			catch

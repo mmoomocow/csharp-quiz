@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace gui
 {
-	#region classes
-
 	/// <summary>
 	/// Questions for the quiz. 
 	/// Each use should have a separate object, as asked questions are removed from the list
@@ -73,7 +71,7 @@ namespace gui
 		/// Removes the question from the list to prevent asking the same question multiple times.
 		/// </summary>
 		/// <returns>A randomly selected question object</returns>
-		public Question randomQuestion()
+		public Question RandomQuestion()
 		{
 			if (questionType == 0)
 			{
@@ -105,7 +103,7 @@ namespace gui
 		/// Remove a question from the currently selected question list
 		/// </summary>
 		/// <param name="question">The question to remove</param>
-		public void removeQuestion(Question question)
+		public void RemoveQuestion(Question question)
 		{
 			if (questionType == 0) { questions_firstAid.Remove(question); score_firstAidCorrect++; }
 			else if (questionType == 1) { questions_vitalSigns.Remove(question); score_vitalSignsCorrect++; }
@@ -115,7 +113,7 @@ namespace gui
 		/// <summary>
 		/// Get the user to choose the type of question they want
 		/// </summary>
-		public void setQuestionType(int chosen)
+		public void SetQuestionType(int chosen)
 		{
 			questionType = chosen - 1;
 		}
@@ -125,6 +123,4 @@ namespace gui
 		/// </summary>
 		public Player(Random randomNumberGenerator) { rand = randomNumberGenerator; }
 	}
-
-	#endregion classes
 }

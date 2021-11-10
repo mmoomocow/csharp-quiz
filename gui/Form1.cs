@@ -6,18 +6,13 @@ namespace gui
 	public partial class quizApp : Form
 	{
 		#region Variables
-
-		// Create a global random generator
-		Random random = new Random();
-
 		// Define player 1's questions
-		Player player1Questions = new Player(new Random());
+		readonly Player player1Questions = new Player(new Random());
 		// pre-define the current question
 		Question currentQuestion;
 
 		// Choose question type toggle
 		bool choosingQuestionType = false;
-
 
 		#endregion Variables
 
@@ -27,7 +22,7 @@ namespace gui
 		/// First part of getting the user to pick a question type
 		/// Sets the text for all the buttons and enables/disables the relevant buttons
 		/// </summary>
-		void pickQuestionType()
+		void PickQuestionType()
 		{
 			answerExplanation.Text = "";
 			questionText.Text = "Please choose the question type you want to be asked";
@@ -50,7 +45,7 @@ namespace gui
 		void HandlePickQuestionType(int chosen)
 		{
 			answerExplanation.Text = "";
-			player1Questions.setQuestionType(chosen);
+			player1Questions.SetQuestionType(chosen);
 			questionText.Text = "Question type chosen, hit next question to continue";
 			AnswerBtn1.Text = "";
 			AnswerBtn2.Text = "";
@@ -73,7 +68,7 @@ namespace gui
 			if (currentQuestion.correctIndex == indexOfButton)
 			{
 				// Remove the question
-				player1Questions.removeQuestion(currentQuestion);
+				player1Questions.RemoveQuestion(currentQuestion);
 				// and tell the user the answer was correct
 				questionText.Text = "You got it correct!!";
 			}
@@ -114,7 +109,7 @@ namespace gui
 			// init the app
 			InitializeComponent();
 			// get the user to pick a question type
-			pickQuestionType();
+			PickQuestionType();
 		}
 
 		#endregion Quiz startup
@@ -192,13 +187,13 @@ namespace gui
 			try
 			{
 				// Using the class function
-				currentQuestion = player1Questions.randomQuestion();
+				currentQuestion = player1Questions.RandomQuestion();
 			}
 			// Catch the no more questions exception
 			catch
 			{
 				// Get the user to pick a new question type
-				pickQuestionType();
+				PickQuestionType();
 				// Don't continue
 				return;
 			}

@@ -98,9 +98,10 @@ namespace gui
 			// Enable the next question button
 			NextQuestion.Enabled = true;
 
-			score.Text = $"You have been asked {Player1.score_firstAidTimesAsked} first aid questions and got {Player1.score_firstAidCorrect} correct\n" +
-				$"You have been asked {Player1.score_vitalSignsTimesAsked} first aid questions and got {Player1.score_vitalSignsCorrect} correct\n" +
-				$"You have been asked {Player1.score_writtenTestTimesAsked} first aid questions and got {Player1.score_writtenTestCorrect} correct\n";
+			score.Text =
+				$"You have been asked {(Player1.score_firstAidTimesAsked == 0 ? "no" : Player1.score_firstAidTimesAsked.ToString())} First Aid question{(Player1.score_firstAidTimesAsked == 1 ? "" : "s")} and got {(Player1.score_firstAidCorrect == 0 ? "none" : Player1.score_firstAidCorrect.ToString())} correct\n" +
+				$"You have been asked {(Player1.score_vitalSignsTimesAsked == 0 ? "no" : Player1.score_vitalSignsTimesAsked.ToString())} Vital Signs question{(Player1.score_vitalSignsTimesAsked == 1 ? "" : "s")} and got {(Player1.score_vitalSignsCorrect == 0 ? "none" : Player1.score_vitalSignsCorrect.ToString())} correct\n" +
+				$"You have been asked {(Player1.score_writtenTestTimesAsked == 0 ? "no" : Player1.score_writtenTestTimesAsked.ToString())} Written Test question{(Player1.score_writtenTestTimesAsked == 1 ? "" : "s")} and got {(Player1.score_writtenTestCorrect == 0 ? "none" : Player1.score_writtenTestCorrect.ToString())} correct";
 		}
 
 		#endregion Functions
@@ -114,6 +115,7 @@ namespace gui
 			InitializeComponent();
 			// get the user to pick a question type
 			PickQuestionType();
+			score.Text = "";
 		}
 
 		#endregion Quiz startup

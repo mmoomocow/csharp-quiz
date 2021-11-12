@@ -107,6 +107,7 @@ I will do this by:
 
 [Storage of questions - Class vs Lists](https://github.com/mmoomocow/csharp-quiz/issues/36)
 [Struct vs class](https://github.com/mmoomocow/csharp-quiz/issues/9)
+[alternative way to measure score](https://github.com/mmoomocow/csharp-quiz/issues/38)
 
 ## Evidence of Testing your components/program (A, M, E)
 

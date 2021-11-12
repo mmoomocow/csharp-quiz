@@ -27,13 +27,6 @@ I will do this by:
 * Making the questions are relevant to our training
 * Fulfilling the purpose of the program
 
-I have done this by:
-
-* Using language that is simple and appropriate, [Example here](https://github.com/mmoomocow/csharp-quiz/commit/7ec36bb8d1ad7cfcb5634f41c338924c52e6336a)
-* Creating questions that are relevant to the purpose of the training
-  * There are 3 question types, First aid, patient vital signs and St John history. The first aid and vital signs are relevant for our first aid tests, and the St John history questions are relevant to the written test
-* Following the purpose of the program
-
 ### Usability
 
 The usability implications of my program include
@@ -42,24 +35,6 @@ The usability implications of my program include
 * Not making it to simple or complex for my target audience
 * Using a readable font in my GUI
 * Following the usability heuristics
-
-I will do this by
-
-* Designing a simple interface that is easy to use
-* Not making an interface that is very simple/complex
-* Using a readable font
-
-I have done this by:
-
-* Frequently testing my program
-  1. Testing it myself using edge cases
-  2. Testing it with other people in my class
-  3. Testing it with other members of the team
-* Designing a simple interface
-  * The interface is simple to use and provides instructions on how to use it.
-  * All buttons are labeled to make them easier to use
-  * A GUI application was chosen because it is easier to use than a console app
-* Using a font that is readable
 
 ### Functionality
 
@@ -76,13 +51,6 @@ I will do this by:
 * Checking the functionality of inputs
 * Implementing "sanity checks" in all inputs to ensure errors cannot be caused
 * Making the program relevant to the purpose and target audience
-
-I have done this by:
-
-* Repeatedly testing the program to make sure all features work as intended
-* Testing areas where the user can make inputs to ensure they are robust
-* Implementing all the features of the program so it can be used fully
-* Checking user inputs are valid before attempting to use them
 
 ### Sustainability and future proofing
 
@@ -101,14 +69,6 @@ I will do this by:
 * Checking my code against the current microsoft c# documentation
 * Adding code comments
 * Using common and up-to-date c# conventions
-
-I have done this by:
-
-* Using minimal resources to run the program
-* Keeping my code understandable and readable
-  * Using code comments
-  * Correct indentation
-  * Usable variable names
 
 ## List the components of your program (A)
 
@@ -145,9 +105,8 @@ I have done this by:
 
 ## Evidence of Trialing your components (A, M, E)
 
-* [All issues that cause an error](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3A%22causes+error%22)
-* [All issues that are labeled as bugs](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3Abug)
-* [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
+[Storage of questions - Class vs Lists](https://github.com/mmoomocow/csharp-quiz/issues/36)
+[Struct vs class](https://github.com/mmoomocow/csharp-quiz/issues/9)
 
 ## Evidence of Testing your components/program (A, M, E)
 
@@ -155,11 +114,60 @@ I have done this by:
 * [All issues that are labeled as bugs](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3Abug)
 * [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 
+### User Feedback from testing
+
+| Person  | Relevance              | Feedback on front-end                                                                  | Feedback on back-end                                                                                                                                                                                  | Version tested | Changes made as a result                                                                                                                                               |
+| ------- | ---------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Josh    | Relevant age group     | Very good error prevention, disabling buttons helps to stop lots of issues             | More code comments could help, some of the information around the classes is a bit confusing                                                                                                          | GUI app        |
+| Max     | Relevant age group     | Adding information about what answer is correct and why would be very helpful          | --                                                                                                                                                                                                    | Console App    | Add answer explanation variable to each question and tell the user the correct answer                                                                                  |
+| Zoe     | Member of St John team | All the questions are helpful and relevant, more would be good                         | --                                                                                                                                                                                                    | Console App    | Additional questions are a future project, 21 is enough for testing and more would be added before a full release to                                                   |
+| Cameron | Relevant age group     | The simple design makes it easy to use, the text buttons are hard to read at times     | --                                                                                                                                                                                                    | GUI app        | Make font size on buttons larger                                                                                                                                       |
+| Tremain | Relevant age group     | The score text could be improved, "...1 question**s**..." is not grammatically correct | The use of classes for each player is very good, improves the scalability of the program and makes it more readable. The name should be updated from "Questions" to "Player" to make it more readable | GUI app        | Rename questions class to player for readability, the purpose of the class has changed over time to include scores etc so calling it the questions class was incorrect |
+
 ## Evidence of addressing relevant implications (M)
 
-[Sustainability and future proofing - Adding code comments](https://github.com/mmoomocow/csharp-quiz/issues/8)
-[Error prevention](https://github.com/mmoomocow/csharp-quiz/issues/1)
+### Addressing Functionality
 
-### Testing to diagnose and fix issues
+* Frequently testing my program
+  1. Testing it myself
+  2. Testing it with other people in my class
+  3. Testing it with other members of the team
+  4. Preventing errors by disabling buttons when they shouldn't be presses
+* Designing a simple interface
+  * The interface is simple and intuitive to use
+  * All buttons are labeled to make them easier to use
+  * A GUI application was chosen because it is easier to use than a console app
+* Using a font that is readable
 
-[Testing question asking and realising answers are incorrect](https://github.com/mmoomocow/csharp-quiz/issues/18)
+#### Error Prevention
+
+* <https://github.com/mmoomocow/csharp-quiz/commit/5a23976c564e0fb2e3acda3da1aec63243c05458>
+* <https://github.com/mmoomocow/csharp-quiz/issues/1>
+* <https://github.com/mmoomocow/csharp-quiz/commit/5bbd237791e0a6a81c67edd6e18fb934d60a956d>
+* <https://github.com/mmoomocow/csharp-quiz/issues/33>
+
+### Addressing Sustainability and future proofing
+
+* Repeatedly testing the program to make sure all features work as intended
+* Testing areas where the user can make inputs to ensure they are robust
+* Implementing all the features of the program so it can be used fully
+* Checking user inputs are valid before attempting to use them
+* Using classes to allow for scalability
+
+#### Code Comments
+
+* <https://github.com/mmoomocow/csharp-quiz/pull/12/commits/6318ac1fd46986daa77bc5551e36163036145f14>
+* <https://github.com/mmoomocow/csharp-quiz/commit/b15dde324d6f2e0425e82456e79c2984f9099800>
+
+### Addressing Usability
+
+* All features function as intended
+* The user can play the quiz without causing errors
+* The program fits the purpose of the program
+
+### Addressing Social
+
+* Using language that is simple and appropriate, [Example here](https://github.com/mmoomocow/csharp-quiz/commit/7ec36bb8d1ad7cfcb5634f41c338924c52e6336a)
+* Creating questions that are relevant to the purpose of the training
+  * There are 3 question types, First aid, patient vital signs and St John history. The first aid and vital signs are relevant for our first aid tests, and the St John history questions are relevant to the written test
+* Following the purpose of the program

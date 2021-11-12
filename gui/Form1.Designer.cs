@@ -93,7 +93,7 @@ namespace gui
             this.questionText.AutoSize = true;
             this.questionText.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.questionText.Location = new System.Drawing.Point(13, 51);
-            this.questionText.MaximumSize = new System.Drawing.Size(400, 75);
+            this.questionText.MaximumSize = new System.Drawing.Size(400, 150);
             this.questionText.Name = "questionText";
             this.questionText.Size = new System.Drawing.Size(119, 25);
             this.questionText.TabIndex = 8;
@@ -103,7 +103,7 @@ namespace gui
             // 
             this.answerExplanation.AutoSize = true;
             this.answerExplanation.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.answerExplanation.Location = new System.Drawing.Point(13, 224);
+            this.answerExplanation.Location = new System.Drawing.Point(13, 238);
             this.answerExplanation.MaximumSize = new System.Drawing.Size(400, 200);
             this.answerExplanation.Name = "answerExplanation";
             this.answerExplanation.Size = new System.Drawing.Size(166, 25);
@@ -135,7 +135,7 @@ namespace gui
             // 
             this.score.AutoSize = true;
             this.score.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.score.Location = new System.Drawing.Point(13, 96);
+            this.score.Location = new System.Drawing.Point(13, 108);
             this.score.MaximumSize = new System.Drawing.Size(400, 300);
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(86, 19);

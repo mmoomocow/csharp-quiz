@@ -76,7 +76,7 @@ namespace gui
 			else
 			{
 				// Tell the user it was not correct
-				// Don't remove the question as it gives the user an opertunuty to learn
+				// Don't remove the question as it gives the user an opportunity to learn
 				questionText.Text = "Sorry, that's not correct!";
 			}
 

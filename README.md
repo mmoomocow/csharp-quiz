@@ -32,7 +32,7 @@ I have done this by:
 * Using language that is simple and appropriate, [Example here](https://github.com/mmoomocow/csharp-quiz/commit/7ec36bb8d1ad7cfcb5634f41c338924c52e6336a)
 * Creating questions that are relevant to the purpose of the training
   * There are 3 question types, First aid, patient vital signs and St John history. The first aid and vital signs are relevant for our first aid tests, and the St John history questions are relevant to the written test
-* Following the purpose of the program 
+* Following the purpose of the program
 
 ### Usability
 
@@ -57,9 +57,9 @@ I have done this by:
   3. Testing it with other members of the team
 * Designing a simple interface
   * The interface is simple to use and provides instructions on how to use it.
-  * All buttons are labled to make them easier to use
+  * All buttons are labeled to make them easier to use
   * A GUI application was chosen because it is easier to use than a console app
-* Using a font that is readable 
+* Using a font that is readable
 
 ### Functionality
 
@@ -109,7 +109,6 @@ I have done this by:
   * Using code comments
   * Correct indentation
   * Usable variable names
-* 
 
 ## List the components of your program (A)
 
@@ -120,7 +119,7 @@ I have done this by:
   * track correct/incorrect questions
 
 * Quiz GUI
-  * [x] Question classes from console app
+  * Question classes from console app
   * Form design
   * Getting user input
   * Swapping between players
@@ -142,10 +141,10 @@ I have done this by:
   * [x] Transfer Question and Questions classes from console app
   * [x] Design the form (4 main buttons, 2 main text areas)
   * [x] Code for buttons, relating the button to what the current question is and if it's correct
-  * [ ] Managing swapping between players (Player class??)
-  * [ ] Mass testing
+  * [x] Mass testing
 
 ## Evidence of Trialing your components (A, M, E)
+
 * [All issues that cause an error](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3A%22causes+error%22)
 * [All issues that are labeled as bugs](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue+label%3Abug)
 * [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
@@ -157,8 +156,10 @@ I have done this by:
 * [All issues](https://github.com/mmoomocow/csharp-quiz/issues?q=is%3Aissue)
 
 ## Evidence of addressing relevant implications (M)
+
 [Sustainability and future proofing - Adding code comments](https://github.com/mmoomocow/csharp-quiz/issues/8)
 [Error prevention](https://github.com/mmoomocow/csharp-quiz/issues/1)
 
 ### Testing to diagnose and fix issues
+
 [Testing question asking and realising answers are incorrect](https://github.com/mmoomocow/csharp-quiz/issues/18)
